@@ -142,5 +142,28 @@ a {
 .chooseProfile #modifyButton{
     position: absolute;
     right: 1%;
+    top: -1%;
+    width: 13vw;
+    height: 13vw;
     z-index: 2;
+    opacity: 0.1
+}
+
+.chooseProfile #modifyButton:checked ~#modifyText{
+    display: none;
+}
+
+.chooseProfile #finishButton{
+    position: absolute;
+    font-size: 3vw;
+    right: 1%;
+    top: 2%;
+}
+
+.chooseProfile :not(#modifyButton:checked) ~#finishButton{
+    display: none;
+}
+
+.chooseProfile #modifyButton:checked ~#finishButton{
+    display: block;
 }

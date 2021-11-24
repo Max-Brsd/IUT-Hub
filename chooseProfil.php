@@ -17,7 +17,7 @@
     <img id="imgBackgroundP1" src="img/part-1.svg">
 
     <h2 id="titleWho">Qui est-ce ?</h2>
-        <p id="modifyText">Modifier</p>
         <input type="checkbox" id="modifyButton" name="checkBox">
+    <p id="modifyText">Modifier</p>
     <p id="finishButton">Terminer</p>
 </body>
