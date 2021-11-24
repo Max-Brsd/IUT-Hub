@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 <?php require_once __DIR__."/includes/config.php"?>
-=======
-<?php
-require_once __DIR__."/includes/config.php";
-?>
->>>>>>> lolo
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,10 +17,16 @@ require_once __DIR__."/includes/config.php";
 <?php require "modules/header.php"; ?>
 <main>
 
-    <span class="logo"><img src=<?= '"img/logo_iuthub.png'.webp().'"' ?>  alt=""></span>
+
+
     <div class="search-bar">
         <input type="text" id="search_bar" name="search_bar">
-        <img src="img/menu-icon.svg" alt="Logo menu burger">
+
+        <ul>
+            <li>hey</li>
+            <li>heyo</li>
+            <li>ty</li>
+        </ul>
     </div>
 
 

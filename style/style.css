@@ -1,99 +1,98 @@
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Comfortaa', cursive;
+	padding: 0;
+	margin: 0;
+	font-family: 'Comfortaa', cursive;
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
-}
-/*
-input {
-    width: 250px;
-    margin-top: 1%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 0.9em;
-    padding: 0.5em;
-    border: none;
-
-
-    border-bottom: solid 1px #ccc;
-
+	color: inherit;
+	text-decoration: inherit;
 }
 
-input:focus{
-    transition: all 0.1s cubic-bezier(.17,.67,.34,.92);
-    outline: none;
-    border-bottom: solid 3px #242424;
-}*/
 
 /* Format Telephone*/
 @media (max-width: 480px) {
 
-    nav{
-        display: none;
-    }
+	nav {
+		display: none;
+	}
 
-    /*LOGO de IUTHUB*/
-    span.logo {
+	/*LOGO de IUTHUB*/
+	span.logo {
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 100%;
-        height: 100%;
-
-
-    }
-    .search-bar input{
-        display: flex;
-        align-items: center;
-        width: 250px;
-        margin-top: 1%;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-        font-size: 0.9em;
-        padding: 0.5em;
-        border: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 100%;
+		height: 100%;
 
 
-        border-bottom: solid 1px #ccc;
-    }
+	}
 
-    .search-bar img{
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        height: 25px;
-        width: 25px;
-    }
+	.search-bar input {
+		display: flex;
+		margin: auto;
 
-    .burger {
-        opacity: 0;
-        position: absolute;
-        left: 10px;
-        top: 6px;
-        height: 25px;
-        width: 25px;
-        z-index: 9;
-    }
-    .burger:checked{
-        background: aqua;
-    }
-    .burger-span{
+		width: 250px;
+
+		border: 1px solid #7670F0;
+		border-radius: 3px;
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		font-size: 0.9em;
+		padding: 0.5em;
+		border: none;
 
 
-    }
-    .burger-span::before{
+		border-bottom: solid 1px #ccc;
+	}
 
-    }
-    .burger-span::after{
 
-    }
+	.search-bar input:focus {
+		transition: all 0.1s cubic-bezier(.17, .67, .34, .92);
+		outline: none;
+		border-bottom: solid 3px #7670F0;
+	}
+
+	.logo-burger {
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		height: 25px;
+		width: 25px;
+	}
+
+	.burger {
+		opacity: 0%;
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		height: 25px;
+		width: 25px;
+		z-index: 9;
+	}
+
+	.burger:checked ~ .logo-burger{
+
+		-webkit-animation:spin 0.5s linear;
+		-moz-animation:spin 0.5s linear;
+		animation:spin 0.5s linear;
+	}
+
+
+	.burger-span{
+
+
+	}
+	.burger-span::before{
+
+	}
+	.burger-span::after{
+
+	}
 
 
 }
@@ -101,15 +100,15 @@ input:focus{
 /*Format autre*/
 @media (min-width: 481px) {
 
-    span.logo {
-        display: none;
-    }
+	span.logo {
+		display: none;
+	}
 
-    .search-bar img {
-        display: none;
-    }
+	.search-bar img {
+		display: none;
+	}
 
-    .burger{
-        display: none;
-    }
+	.burger {
+		display: none;
+	}
 }
