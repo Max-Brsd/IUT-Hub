@@ -1,14 +1,4 @@
-<?php
-
-function webp(){
-    if( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false ) {
-        return '.webp';
-    }
-    else {
-        return ;
-    }
-}
-?>
+<?php require_once __DIR__."/includes/config.php"?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,6 +12,8 @@ function webp(){
     <title>Main</title>
 </head>
 <body>
+
+
 <?php require "modules/header.php"; ?>
 <main>
 
