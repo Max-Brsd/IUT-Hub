@@ -108,11 +108,6 @@ a {
 		display: none;
 	}
 
-<<<<<<< HEAD
-	.burger {
-		display: none;
-	}
-=======
     .burger{
         display: none;
     }
@@ -156,5 +151,5 @@ a {
     text-align: center;
     top: 1%;
     font-family: 'Comfortaa', cursive;
->>>>>>> Maxime
+
 }
