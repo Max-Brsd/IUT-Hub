@@ -121,6 +121,11 @@ input:focus{
 }
 
 .chooseProfile #titleWho{
-    z-index: 2;
+    z-index: 1;
+    position: absolute;
+    font-size: 7vw;
+    width: 100%;
+    text-align: center;
+    top: 1%;
     font-family: 'Comfortaa', cursive;
 }
