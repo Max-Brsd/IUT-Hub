@@ -19,7 +19,10 @@ a {
 
 body{
 
+	background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
 	background-color: #C4C4C4;
+	background-position: left top, right bottom;
+	background-repeat: no-repeat,no-repeat;
 
 }
 
