@@ -9,7 +9,32 @@ a {
     text-decoration: inherit;
 }
 
+input {
+    width: 250px;
+    margin-top: 1%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.5em;
+    border: none;
+
+    border-bottom: solid 1px #ccc;
+
+}
+
+input:focus{
+    transition: all 0.1s cubic-bezier(.17,.67,.34,.92);
+    outline: none;
+    border-bottom: solid 3px #242424;
+}
+
+/* Format Telephone*/
 @media (max-width: 480px) {
+
+    nav{
+        display: none;
+    }
 
     span.logo {
 
@@ -19,51 +44,41 @@ a {
 
     }
 
+    .search-bar img{
+        position: absolute;
+        left: 10px;
+        top: 0;
+        height: 25px;
+        width: 25px;
+    }
+
     .burger {
         opacity: 0;
         position: absolute;
-        right: 10px;
+        left: 10px;
         top: 0;
         height: 50px;
         width: 50px;
         z-index: 9;
     }
     .burger:checked{
-        opacity: 0;
+        background: aqua;
     }
     .burger-span{
 
-        position: absolute;
-        background-color:black;
-        width: 50px;
-        height: 5px;
-        border-radius: 5px;
-        z-index: 8;
-        top: 23px;
-        right: 10px;
+
     }
     .burger-span::before{
-        content: '';
-        width: 50px;
-        height: 5px;
-        border-radius: 5px;
-        display: inline-block;
-        background-color:black;
-        transform: translateY(-25px);
+
     }
     .burger-span::after{
-        content: '';
-        width: 50px;
-        height: 5px;
-        border-radius: 5px;
-        display: inline-block;
-        background-color:black;
-        transform: translateY(-7px);
+
     }
 
 
 }
 
+/*Format autre*/
 @media (min-width: 481px) {
 
     span.logo {

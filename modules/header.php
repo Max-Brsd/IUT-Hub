@@ -1,5 +1,6 @@
 <header>
-    <img src="" alt=""> <!-- Les 4 points -->
+    <input class="burger" type="checkbox">
+    <span class="burger-span"></span>
     <nav>
         <a href="">Button 1</a>
         <a href="">Button 2</a>

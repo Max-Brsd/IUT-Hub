@@ -18,8 +18,10 @@
 <main>
 
     <span class="logo"><img src=<?= '"img/logo_iuthub.png'.webp().'"' ?>  alt=""></span>
-    <label for="search_bar">Search Bar</label>
-    <input type="text" id="search_bar" name="search_bar">
+    <div class="search-bar">
+        <input type="text" id="search_bar" name="search_bar">
+        <img src="img/menu-icon.svg" alt="Logo menu burger">
+    </div>
 
 
     <div class="recommendation">
