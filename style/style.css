@@ -1,5 +1,24 @@
+<<<<<<< Updated upstream
 *{
     padding: 0;
     margin: 0;
     font-family: 'Comfortaa', cursive;
+=======
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+@media (max-width: 480px) {
+
+
+
+
+>>>>>>> Stashed changes
 }
