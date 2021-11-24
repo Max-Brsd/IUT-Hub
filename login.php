@@ -15,7 +15,7 @@ require_once __DIR__."/includes/config.php";
 	<body>
 		<?php include 'modules/header.php'; ?>
 		<main>
-			<form id="form-login" method="POST" enctype="multipart/form-data" action="login.php">
+			<form id="form-login" method="POST" enctype="multipart/form-data" action="modules/logme.php">
 				<fieldset>
 					<?php
 						if(isset($_SESSION['error']) && $_SESSION['error']){
