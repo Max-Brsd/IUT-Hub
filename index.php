@@ -1,3 +1,14 @@
+<?php
+
+function webp(){
+    if( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false ) {
+        return '.webp';
+    }
+    else {
+        return ;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,7 +25,7 @@
 <?php require "modules/header.php"; ?>
 <main>
 
-    <span class="logo"><img src="" alt=""></span>
+    <span class="logo"><img src=<?= '"img/logo_iuthub.png'.webp().'"' ?>  alt=""></span>
     <label for="search_bar">Search Bar</label>
     <input type="text" id="search_bar" name="search_bar">
 
