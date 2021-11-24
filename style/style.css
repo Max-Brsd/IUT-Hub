@@ -9,7 +9,7 @@ a {
     text-decoration: inherit;
 }
 
-input {
+.search-bar input {
     width: 250px;
     margin-top: 1%;
     border: 1px solid #ccc;
@@ -23,7 +23,7 @@ input {
 
 }
 
-input:focus{
+.search-bar input:focus{
     transition: all 0.1s cubic-bezier(.17,.67,.34,.92);
     outline: none;
     border-bottom: solid 3px #242424;
@@ -100,6 +100,7 @@ input:focus{
 .chooseProfile{
     padding: 0;
     margin: 0;
+    width: 0;
     overflow-y: hidden;
     background: #C4C4C4;
 }
@@ -128,4 +129,18 @@ input:focus{
     text-align: center;
     top: 1%;
     font-family: 'Comfortaa', cursive;
+}
+
+.chooseProfile #modifyText{
+	z-index: 1;
+	position: absolute;
+	font-size: 3vw;
+	right: 1%;
+	top: 2%;
+}
+
+.chooseProfile #modifyButton{
+    position: absolute;
+    right: 1%;
+    z-index: 2;
 }
