@@ -6,16 +6,33 @@
 	padding: 0;
 	margin: 0;
 	font-family: 'Comfortaa', cursive;
+	z-index: 2;
+
 }
+
+
 
 a {
 	color: inherit;
 	text-decoration: inherit;
 }
 
+body{
+
+	background-color: #C4C4C4;
+
+}
+
 
 /* Format Telephone*/
 @media (max-width: 480px) {
+/*
+	.abc{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}*/
 
 	nav {
 		display: none;
@@ -24,6 +41,7 @@ a {
 	/*LOGO de IUTHUB*/
 	span.logo {
 
+		margin-top: 30px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -48,6 +66,7 @@ a {
 
 
 		border-bottom: solid 1px #ccc;
+		z-index: 3;
 	}
 
 
@@ -80,7 +99,10 @@ a {
 		-webkit-animation:spin 0.5s linear;
 		-moz-animation:spin 0.5s linear;
 		animation:spin 0.5s linear;
+
 	}
+
+
 
 
 	.burger-span{

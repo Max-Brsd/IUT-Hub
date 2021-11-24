@@ -14,21 +14,19 @@
     <link rel = "icon" href ="/img/logo_iuthub.png" type = "image/x-icon">
 </head>
 <body>
-
+<img class="imgBackgroundP2" src="img/part-2.svg" alt="">
+<img class="imgBackgroundP1" src="img/part-1.svg" alt="">
 
 <?php require "modules/header.php"; ?>
 <main>
 
 
 
+
     <div class="search-bar">
         <input type="text" id="search_bar" name="search_bar">
 
-        <ul>
-            <li>hey</li>
-            <li>heyo</li>
-            <li>ty</li>
-        </ul>
+
     </div>
 
 
@@ -51,6 +49,7 @@
         <a href="">Family</a>
     </div>
 </main>
+
 </body>
 </html>
 
