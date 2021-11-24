@@ -4,7 +4,7 @@ session_start();
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 	try {
-		$pdo = new PDO('sqlite:'.__DIR__.'/../database.db');
+		$pdo = new PDO('sqlite:'.__DIR__.'/../data/IUTHub.db');
 		$statement = $pdo->prepare("SELECT * FROM users WHERE email =:email");
 		$statement->execute(
 			[
