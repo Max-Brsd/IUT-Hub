@@ -1,6 +1,4 @@
-<?php
-require_once __DIR__."/includes/config.php";
-?>
+<?php require_once __DIR__."/includes/config.php"?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,15 +9,27 @@ require_once __DIR__."/includes/config.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Main</title>
+    <title>IUT-Hub</title>
+
+    <link rel = "icon" href ="/img/logo_iuthub.png" type = "image/x-icon">
 </head>
 <body>
+
+
 <?php require "modules/header.php"; ?>
 <main>
 
-    <span class="logo"><img src="" alt=""></span>
-    <label for="search_bar">Search Bar</label>
-    <input type="text" id="search_bar" name="search_bar">
+
+
+    <div class="search-bar">
+        <input type="text" id="search_bar" name="search_bar">
+
+        <ul>
+            <li>hey</li>
+            <li>heyo</li>
+            <li>ty</li>
+        </ul>
+    </div>
 
 
     <div class="recommendation">
