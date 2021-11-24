@@ -8,7 +8,7 @@ a {
     color: inherit;
     text-decoration: inherit;
 }
-
+/*
 input {
     width: 250px;
     margin-top: 1%;
@@ -19,6 +19,7 @@ input {
     padding: 0.5em;
     border: none;
 
+
     border-bottom: solid 1px #ccc;
 
 }
@@ -27,7 +28,7 @@ input:focus{
     transition: all 0.1s cubic-bezier(.17,.67,.34,.92);
     outline: none;
     border-bottom: solid 3px #242424;
-}
+}*/
 
 /* Format Telephone*/
 @media (max-width: 480px) {
@@ -36,12 +37,31 @@ input:focus{
         display: none;
     }
 
+    /*LOGO de IUTHUB*/
     span.logo {
 
         display: flex;
         justify-content: center;
         align-items: center;
+        max-width: 100%;
+        height: 100%;
 
+
+    }
+    .search-bar input{
+        display: flex;
+        align-items: center;
+        width: 250px;
+        margin-top: 1%;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 0.9em;
+        padding: 0.5em;
+        border: none;
+
+
+        border-bottom: solid 1px #ccc;
     }
 
     .search-bar img{
@@ -56,9 +76,9 @@ input:focus{
         opacity: 0;
         position: absolute;
         left: 10px;
-        top: 10px;
-        height: 50px;
-        width: 50px;
+        top: 6px;
+        height: 25px;
+        width: 25px;
         z-index: 9;
     }
     .burger:checked{
@@ -82,6 +102,10 @@ input:focus{
 @media (min-width: 481px) {
 
     span.logo {
+        display: none;
+    }
+
+    .search-bar img {
         display: none;
     }
 
