@@ -26,7 +26,7 @@
 
     <div class="recommendation">
     <img src="" alt=""> <!-- Film recommendation 1 -->
-    <a href=""></a> <!-- Button visionage film-->
+    <a href="a"></a> <!-- Button visionage film-->
     <img src="" alt=""> <!-- Film recommendation 2 -->
     <a href=""></a> <!-- Button visionage film-->
     <img src="" alt=""> <!-- Film recommendation 3 -->
