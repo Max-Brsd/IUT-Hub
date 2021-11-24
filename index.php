@@ -1,3 +1,4 @@
+<?php require_once __DIR__."/includes/config.php"?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,10 +12,12 @@
     <title>Main</title>
 </head>
 <body>
+
+
 <?php require "modules/header.php"; ?>
 <main>
 
-    <span class="logo"><img src="" alt=""></span>
+    <span class="logo"><img src=<?= '"img/logo_iuthub.png'.webp().'"' ?>  alt=""></span>
     <label for="search_bar">Search Bar</label>
     <input type="text" id="search_bar" name="search_bar">
 
