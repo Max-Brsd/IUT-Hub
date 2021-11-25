@@ -146,7 +146,7 @@ a {
     width: 13vw;
     height: 13vw;
     z-index: 2;
-    opacity: 0.1
+    opacity: 0;
 }
 
 .chooseProfile #modifyButton:checked ~#modifyText{
