@@ -1,12 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-<style type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Calque_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1920 1080"
+   style="enable-background:new 0 0 1920 1080;"
+   xml:space="preserve"
+   sodipodi:docname="part-1.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
+   id="metadata43"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs41" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview39"
+   showgrid="false"
+   inkscape:zoom="0.19143519"
+   inkscape:cx="704.49621"
+   inkscape:cy="403.00751"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Calque_1" />
+<style
+   type="text/css"
+   id="style34">
 	.st0{fill:#7670F0;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M670,1003.8c21.5-54.3-29.7-98.4-4.7-149.7c21.8-44.7,87.4-65.8,137.6-61.5c71.4,6.2,79.6,61,144.3,68.8
-	c74.2,9,150.3-52.5,188.4-107.6c55.1-79.6,18-127.5,76.2-201.1c31.1-39.3,95.8-94,159.7-83.5c77.5,12.8,90.4,111.1,144.3,108.2
-	c49.4-2.7,99.3-88.4,105.6-169.7c9.1-119.1-80.6-161.7-56.1-249.9c20.3-73.1,106.9-133.7,166.4-122.3c39.1,7.5,52,43.4,129.6,76.2
-	c24.7,10.4,45.9,16.3,58.8,19.4c0,316.2,0,632.5,0,948.7c-456.1,0-912.2,0-1368.3,0C596.4,1069.6,652.1,1049,670,1003.8z"/>
+<path
+   class="st0"
+   d="M670,1003.8c21.5-54.3-29.7-98.4-4.7-149.7c21.8-44.7,87.4-65.8,137.6-61.5c71.4,6.2,79.6,61,144.3,68.8  c74.2,9,150.3-52.5,188.4-107.6c55.1-79.6,18-127.5,76.2-201.1c31.1-39.3,95.8-94,159.7-83.5c77.5,12.8,90.4,111.1,144.3,108.2  c49.4-2.7,99.3-88.4,105.6-169.7c9.1-119.1-80.6-161.7-56.1-249.9c20.3-73.1,106.9-133.7,166.4-122.3c39.1,7.5,52,43.4,129.6,76.2  c24.7,10.4,45.9,16.3,58.8,19.4c0,316.2,0,632.5,0,948.7c-456.1,0-912.2,0-1368.3,0C596.4,1069.6,652.1,1049,670,1003.8z"
+   id="path36" />
 </svg>

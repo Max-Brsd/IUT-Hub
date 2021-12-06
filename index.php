@@ -21,14 +21,12 @@
 
 
 
+
+
     <div class="search-bar">
         <input type="text" id="search_bar" name="search_bar">
 
-        <ul>
-            <li>hey</li>
-            <li>heyo</li>
-            <li>ty</li>
-        </ul>
+
     </div>
 
 
@@ -43,14 +41,12 @@
         <a href=""></a> <!-- Button visionage film-->
     </div>
 
-    <div class="account">
-        <a href="">Connection</a>
-        <a href="">Inscription</a>
-        <a href="">Student</a>
-        <a href="">Normal</a>
-        <a href="">Family</a>
-    </div>
+
+
+
+    <p></p>
 </main>
+
 </body>
 </html>
 
