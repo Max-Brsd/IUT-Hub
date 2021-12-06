@@ -361,3 +361,35 @@ a {
     color: white;
 }
 
+.chooseProfile .modify-overlay{
+    display: none;
+}
+
+.chooseProfile #modifyButton:checked ~.modify-overlay{
+    display: block;
+}
+
+.chooseProfile #modifyButton:checked ~.container .LoïcPicture #loïcPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .KurtPicture #kurtPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .MateoPicture #mateoPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .KevinPicture #kevinPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .MaximePicture #maximePP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
