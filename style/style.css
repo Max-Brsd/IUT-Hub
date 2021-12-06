@@ -10,7 +10,9 @@
 
 }
 
-
+p{
+	padding-top: 200px;
+}
 
 a {
 	color: inherit;
@@ -21,6 +23,7 @@ body{
 
 	background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
 	background-color: #C4C4C4;
+	background-size: 60%;
 	background-position: left top, right bottom;
 	background-repeat: no-repeat,no-repeat;
 
@@ -117,6 +120,36 @@ body{
 	}
 	.burger-span::after{
 
+	}
+
+	#menu
+	{
+		position: absolute;
+		width: 300px;
+		margin: -100px 0 0 -50px;
+		padding: 50px;
+		padding-top: 125px;
+
+		background: #ededed;
+		list-style-type: none;
+		-webkit-font-smoothing: antialiased;
+		
+
+		transform-origin: 0% 0%;
+		transform: translate(-100%, 0);
+
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	}
+
+	#menu li
+	{
+		padding: 10px 0;
+		font-size: 22px;
+	}
+
+	.burger:checked ~ #menu
+	{
+		transform: none;
 	}
 
 
