@@ -13,7 +13,7 @@
     </ul>
     </div>
 
-
+    <span class="logo"><img src="img/logo_iuthub2.png"  alt=""></span>
 
 
 
