@@ -67,13 +67,7 @@ body {
 
 /* Format Telephone*/
 @media (max-width: 480px) {
-    /*
-        .abc{
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }*/
+
     nav {
         display: none;
     }
@@ -135,11 +129,9 @@ body {
         z-index: 16;
     }
 
-    .burger:hover ~ .logo-burger {
 
-        transition: width 0.4s;
 
-    }
+
 
     .burger:checked ~ .logo-burger {
         -webkit-animation: spin 0.5s linear;
@@ -151,32 +143,28 @@ body {
 
     .burger:not(:checked) ~ .logo-burger {
 
+
         -webkit-animation: unspin 0.5s linear;
         -moz-animation: unspin 0.5s linear;
         animation: unspin 0.5s linear;
 
+
     }
 
-    .navbar * {
-        -webkit-transition: none !important;
-        -moz-transition: none !important;
-        -ms-transition: none !important;
-        -o-transition: none !important;
-    }
+	#menu
+	{
+		z-index: 14;
+		position: absolute;
+		width: 25%;
+		height: 100%;
+		margin: -100px 0 0 -50px;
+		padding: 50px;
+		padding-top: 125px;
 
+		background: #7670F0;
+		list-style-type: none;
+		-webkit-font-smoothing: antialiased;
 
-    #menu {
-        z-index: 14;
-        position: absolute;
-        width: 25%;
-        height: 100%;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
-
-        background: #7670F0;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
 
 
         transform-origin: 0% 0%;
@@ -191,14 +179,17 @@ body {
         font-size: 22px;
     }
 
+
     #menu a:focus {
         color: aqua;
 
     }
 
-    .burger:checked ~ #menu {
+    .burger:checked ~ #menu{
         transform: none;
     }
+
+
 
 
 }
