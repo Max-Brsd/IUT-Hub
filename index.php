@@ -13,6 +13,7 @@
     <title>IUT-Hub</title>
 
     <link rel="icon" href="/img/logo_iuthub.png" type="image/x-icon">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
@@ -22,32 +23,28 @@
 <main>
 
 
-
-
     <form class="search-bar" method="GET" action="query.php">
         <input type="text" id="query" name="query" required>
     </form>
 
     <div class="recommendation">
 
-        <span><img src="" alt=""></span>
-        <span><img src="" alt=""></span>
-        <span><img src="" alt=""></span>
+        <span id="recom1">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom1.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom2">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom2.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom3">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom3.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
 
-    </div>
-
-
-
-
-    <div class="recommendation">
-        <img src="" alt=""> <!-- Film recommendation 1 -->
-        <a href="a"></a> <!-- Button visionage film-->
-        <img src="" alt=""> <!-- Film recommendation 2 -->
-        <a href=""></a> <!-- Button visionage film-->
-        <img src="" alt=""> <!-- Film recommendation 3 -->
-        <a href=""></a> <!-- Button visionage film-->
-        <img src="" alt=""> <!-- Film recommendation 4 -->
-        <a href=""></a> <!-- Button visionage film-->
     </div>
 
 

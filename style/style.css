@@ -185,7 +185,52 @@ body {
         transform: none;
     }
 
+    .recommendation span{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+    }
+
+    .recommendation #ileft{
+        position: relative;
+        left: 10%;
+    }
+
+    .recommendation #iright{
+        position: relative;
+        right: 10%;
+    }
+
+    .recommendation img{
+
+        width: 75%;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .recommendation #recom1{
+        display: flex;
+    }
+
+    .recommendation #recom2{
+        display: flex;
+    }
+
+    .recommendation #recom3{
+        display: none;
+    }
+
+    .recommendation #recom1:active{
+        display: none;
+    }
+
+    .recommendation #recom1:active{
+        display: none;
+    }
+
+    /*check carrousel*/
 
 
 }
