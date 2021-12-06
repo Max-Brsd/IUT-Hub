@@ -54,7 +54,15 @@ a {
     text-decoration: inherit;
 }
 
-body {
+input {
+    width: 250px;
+    margin-top: 1%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.5em;
+    border: none;
 
     background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
     background-color: #C4C4C4;
@@ -64,6 +72,11 @@ body {
 
 }
 
+input:focus{
+    transition: all 0.1s cubic-bezier(.17,.67,.34,.92);
+    outline: none;
+    border-bottom: solid 3px #242424;
+}
 
 /* Format Telephone*/
 @media (max-width: 480px) {
@@ -220,6 +233,7 @@ body {
 .chooseProfile {
     padding: 0;
     margin: 0;
+    width: 0;
     overflow-y: hidden;
     background: #C4C4C4;
 }
@@ -249,4 +263,41 @@ body {
     top: 1%;
     font-family: 'Comfortaa', cursive;
 
+}
+
+.chooseProfile #modifyText{
+	z-index: 1;
+	position: absolute;
+	font-size: 3vw;
+	right: 1%;
+	top: 2%;
+}
+
+.chooseProfile #modifyButton{
+    position: absolute;
+    right: 1%;
+    top: -1%;
+    width: 13vw;
+    height: 13vw;
+    z-index: 2;
+    opacity: 0;
+}
+
+.chooseProfile #modifyButton:checked ~#modifyText{
+    display: none;
+}
+
+.chooseProfile #finishButton{
+    position: absolute;
+    font-size: 3vw;
+    right: 1%;
+    top: 2%;
+}
+
+.chooseProfile :not(#modifyButton:checked) ~#finishButton{
+    display: none;
+}
+
+.chooseProfile #modifyButton:checked ~#finishButton{
+    display: block;
 }

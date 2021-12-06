@@ -13,10 +13,11 @@
     <link rel = "icon" href ="/img/logo_iuthub.png" type = "image/x-icon">
 </head>
 <body class="chooseProfile">
-<img id="imgBackgroundP2" src="img/part-2.svg">
-<img id="imgBackgroundP1" src="img/part-1.svg">
+    <img id="imgBackgroundP2" src="img/part-2.svg">
+    <img id="imgBackgroundP1" src="img/part-1.svg">
 
-<h2 id="titleWho">Qui est-ce ?</h2>
-<p id="modifyButton">Modifier</p>
-<p id="finishButton">Terminer</p>
+    <h2 id="titleWho">Qui est-ce ?</h2>
+        <input type="checkbox" id="modifyButton" name="checkBox">
+    <p id="modifyText">Modifier</p>
+    <p id="finishButton">Terminer</p>
 </body>
