@@ -54,7 +54,7 @@ a {
     text-decoration: inherit;
 }
 
-body {
+/*body {
 
     background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
     background-color: #C4C4C4;
@@ -62,7 +62,7 @@ body {
     background-position: left top, right bottom;
     background-repeat: no-repeat, no-repeat;
 
-}
+}*/
 
 
 /* Format Telephone*/
@@ -155,7 +155,7 @@ body {
 	{
 		z-index: 14;
 		position: absolute;
-		width: 25%;
+		width: 50vw;
 		height: 100%;
 		margin: -100px 0 0 -50px;
 		padding: 50px;
@@ -218,14 +218,14 @@ body {
 /*║                                                         ║*/
 /*╚═════════════════════════════════════════════════════════╝*/
 
-.chooseProfile{
+body {
     padding: 0;
     margin: 0;
-    overflow-y: hidden;
+
     background: #C4C4C4;
 }
 
-.chooseProfile #imgBackgroundP1 {
+#imgBackgroundP1 {
     position: absolute;
     width: 100%;
     height: auto;
@@ -233,12 +233,19 @@ body {
     right: 0;
 }
 
-.chooseProfile #imgBackgroundP2 {
+#imgBackgroundP2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
+}
+
+#logoIUT {
+    position: absolute;
+    width: 20vw;
+    top:0.5%;
+    left:1%;
 }
 
 .chooseProfile #titleWho{
@@ -289,16 +296,7 @@ body {
 
 .chooseProfile #modifyButton:checked ~#finishButton{
     display: block;
-}
 
-.chooseProfile .container .LoïcPicture{
-    align-items: center;
-    position: absolute;
-    width: 21vw;
-    height: 28vw;
-    top: 30%;
-    left: 27%;
-    padding: 2%;
 }
 
 .chooseProfile .container .LoïcPicture #loïcPP{
