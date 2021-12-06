@@ -29,3 +29,12 @@ create table movies (
 	movieUrl varchar(255),
 	primary key ("idMovie")
 );
+
+create table ranking(
+	idMovie INTEGER NOT NULL,
+	idUser INTEGER NOT NULL,
+	note INTEGER,
+	primary key ("idMovie", "idUser")
+	foreign key ("idMovie") references movies("idMovie"),
+	foreign key ("idUser") references users("idUser")
+);
