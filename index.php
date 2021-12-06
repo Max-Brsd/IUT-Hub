@@ -21,7 +21,9 @@
 
 
 
-
+    <img id="imgBackgroundP2" src="img/part-2.svg">
+    <img id="imgBackgroundP1" src="img/part-1.svg">
+    <img id="logoIUT" src="img/logo_iuthub2.png">
 
     <div class="search-bar">
         <input type="text" id="search_bar" name="search_bar">
