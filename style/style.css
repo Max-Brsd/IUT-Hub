@@ -395,3 +395,45 @@ a {
     -webkit-filter: grayscale(60%);
     filter: grayscale(60%);
 }
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                 CSS Page chooseProfile                  ║*/
+/*║                       Desktop CSS                       ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+@media (min-width: 560px) {
+    .chooseProfile #imgBackgroundP1{
+        width: 50vw;
+    }
+
+    .chooseProfile #imgBackgroundP2{
+        width: 50vw;
+    }
+
+    .chooseProfile #logoIUT{
+        width: 10vw;
+    }
+
+    .chooseProfile #titleWho{
+        font-size: 4vw;
+    }
+
+    .chooseProfile #modifyText{
+        font-size: 1.5vw;
+    }
+
+    .chooseProfile #finishButton{
+        font-size: 1.5vw
+    }
+
+    .chooseProfile #modifyButton{
+        position: absolute;
+        top: -3vw;
+        right: 1vw;
+        width: 6.5vw;
+        height: 6.5vw;
+        opacity: 0.5;
+    }
+}
