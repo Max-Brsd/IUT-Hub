@@ -195,15 +195,26 @@ body{
 	/*LOGO de IUTHUB*/
 	span.logo {
 
-        margin-top: 30px;
+
+        margin: 15vw auto 5vw auto;
+
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 100%;
-        height: 100%;
+        width: 86.5vw;
+        height: 38vw;
         z-index: 16;
+        border: solid #7670F0 3px;
+        border-radius: 8.5vw;
+
 
     }
+
+    .logo img{
+        width: 110vw;
+        margin-bottom: -1vw;
+    }
+
 
     .search-bar input {
         display: flex;
@@ -277,8 +288,9 @@ body{
 	{
 		z-index: 14;
 		position: absolute;
+        font-size: 5vw;
 		width: 75vw;
-		height: 100%;
+		height: 300vw;
 		margin: -100px 0 0 -50px;
 		padding: 50px;
 		padding-top: 125px;
@@ -415,7 +427,7 @@ body{
         height: 10vw;
         content: '';
         z-index: 1;
-        background-color: #333;
+        background-color: #7670F0;
         background-size: 1rem 1rem;
         background-repeat: no-repeat;
         background-position: center center;

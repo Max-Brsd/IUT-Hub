@@ -30,6 +30,7 @@
     <div class="recommendation">
 
         <section class="carousel" aria-label="Gallery">
+
             <ol class="carousel__viewport">
                 <li id="carousel__slide1"
                     class="carousel__slide">
