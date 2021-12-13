@@ -49,7 +49,15 @@ a {
     text-decoration: inherit;
 }
 
-body {
+.search-bar input {
+    width: 250px;
+    margin-top: 1%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.5em;
+    border: none;
 
     background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
     background-color: #C4C4C4;
@@ -258,6 +266,10 @@ body {
 /*║                                                         ║*/
 /*╚═════════════════════════════════════════════════════════╝*/
 
+.chooseProfile{
+    overflow-y: hidden;
+    background: #C4C4C4;
+}
 
 
 #imgBackgroundP1 {
@@ -279,10 +291,20 @@ body {
 }
 
 .chooseProfile #logoIUT {
-    position: absolute;
+    position: fixed;
     width: 20vw;
-    top:0.5%;
-    left:1%;
+    top:0.5vw;
+    left:1vw;
+    z-index: 1;
+}
+
+.chooseProfile #retourHome{
+    position: fixed;
+    width: 20vw;
+    height: 10vw;
+    top: 0.5vw;
+    left: 1vw;
+    z-index: 2;
 }
 
 .chooseProfile #titleWho{
@@ -334,6 +356,15 @@ body {
 .chooseProfile #modifyButton:checked ~#finishButton{
     display: block;
 
+}
+
+.chooseProfile .container .LoïcPicture{
+    position: absolute;
+    width: 21vw;
+    height: 28vw;
+    top: 30%;
+    left: 27%;
+    padding: 2%;
 }
 
 .chooseProfile .container .LoïcPicture #loïcPP{
@@ -441,7 +472,7 @@ body {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 31%;
+    top: 34%;
     left: 29%;
     display: flex;
     justify-content: center;
@@ -456,7 +487,7 @@ body {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 31%;
+    top: 34%;
     left: 54%;
     display: flex;
     justify-content: center;
@@ -471,7 +502,7 @@ body {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 48.5%;
+    top: 51.5%;
     left: 29%;
     display: flex;
     justify-content: center;
@@ -486,7 +517,7 @@ body {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 48.5%;
+    top: 51.5%;
     left: 54%;
     display: flex;
     justify-content: center;
@@ -501,7 +532,7 @@ body {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 66%;
+    top: 69%;
     left: 42%;
     display: flex;
     justify-content: center;
@@ -512,3 +543,275 @@ body {
     color: white;
 }
 
+.chooseProfile .modify-overlay{
+    display: none;
+}
+
+.chooseProfile #modifyButton:checked ~.modify-overlay{
+    display: block;
+}
+
+.chooseProfile #modifyButton:checked ~.container .LoïcPicture #loïcPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .KurtPicture #kurtPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .MateoPicture #mateoPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .KevinPicture #kevinPP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.chooseProfile #modifyButton:checked ~.container .MaximePicture #maximePP{
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                 CSS Page chooseProfile                  ║*/
+/*║                       Desktop CSS                       ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+@media (min-width: 560px) {
+    .chooseProfile #imgBackgroundP1{
+        width: 50vw;
+    }
+
+    .chooseProfile #imgBackgroundP2{
+        width: 50vw;
+    }
+
+    .chooseProfile #logoIUT{
+        width: 10vw;
+    }
+
+    .chooseProfile #retourHome{
+        position: absolute;
+        width: 10vw;
+        height: 5vw;
+        z-index: 2;
+    }
+
+    .chooseProfile #titleWho{
+        font-size: 4vw;
+    }
+
+    .chooseProfile #modifyText{
+        font-size: 1.5vw;
+    }
+
+    .chooseProfile #finishButton{
+        font-size: 1.5vw
+    }
+
+    .chooseProfile #modifyButton{
+        position: absolute;
+        top: -3vw;
+        right: 1vw;
+        width: 6.5vw;
+        height: 6.5vw;
+        opacity: 0;
+    }
+
+    .chooseProfile > .container{
+        display: inline-block;
+        width: 80vw;
+        height: 15vw;
+    }
+
+    .chooseProfile .container .LoïcPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 10vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .LoïcPicture #loïcPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .LoïcPicture #loïcPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .KurtPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 27vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .KurtPicture #kurtPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .KurtPicture #kurtPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .MateoPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 44vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .MateoPicture #mateoPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .MateoPicture #mateoPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .KevinPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 61vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .KevinPicture #kevinPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .KevinPicture #kevinPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .MaximePicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 78vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .MaximePicture #maximePP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .MaximePicture #maximePP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .modify-overlay .modify-Loïc{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 14vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Loïc a #modifyL{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kurt{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 31vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kurt a #modifyKu{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Mateo{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 48vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Mateo a #modifyMat{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kevin{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 65vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kevin a #modifyKe{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Maxime{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 82vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Maxime a #modifyMax{
+        width: 7vw;
+        color: white;
+    }
+}

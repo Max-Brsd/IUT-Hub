@@ -16,7 +16,9 @@
     <img id="imgBackgroundP2" src="img/part-2.svg">
     <img id="imgBackgroundP1" src="img/part-1.svg">
 
-    <img id="logoIUT" src="img/logo_iuthub2.png">
+    <a href="index.php" id="retourHome">
+        <img id="logoIUT" src="img/logo_iuthub2.png">
+    </a>
 
     <h2 id="titleWho">Qui est-ce ?</h2>
         <input type="checkbox" id="modifyButton" name="checkBox">
@@ -26,46 +28,46 @@
 
     <div class="container">
         <div class="LoïcPicture">
-            <img  id="loïcPP" src="img/loïc.svg">
+            <a href="#"><img  id="loïcPP" src="img/loïc.svg"></a>
             <p id="loïcPP-label">Loïc</p>
         </div>
 
         <div class="KurtPicture">
-            <img  id="kurtPP" src="img/kurt.svg">
+            <a href="#"><img  id="kurtPP" src="img/kurt.svg"></a>
             <p id="kurtPP-label">Kurt</p>
         </div>
 
         <div class="MateoPicture">
-            <img  id="mateoPP" src="img/mateo.svg">
+            <a href="#"><img  id="mateoPP" src="img/mateo.svg"></a>
             <p id="mateoPP-label">Mateo</p>
         </div>
 
         <div class="KevinPicture">
-            <img  id="kevinPP" src="img/kevin.svg">
+            <a href="#"><img  id="kevinPP" src="img/kevin.svg"></a>
             <p id="kevinPP-label">Kevin</p>
         </div>
 
         <div class="MaximePicture">
-            <img  id="maximePP" src="img/maxime.svg">
+            <a href="#"><img  id="maximePP" src="img/maxime.svg"></a>
             <p id="maximePP-label">Maxime</p>
         </div>
     </div>
 
     <div class="modify-overlay">
         <div class="modify-Loïc">
-            <img id="modifyL" src="img/modify.svg">
+            <a href="#"><img id="modifyL" src="img/modify.svg"></a>
         </div>
         <div class="modify-Kurt">
-            <img id="modifyKu" src="img/modify.svg">
+            <a href="#"><img id="modifyKu" src="img/modify.svg"></a>
         </div>
         <div class="modify-Mateo">
-            <img id="modifyMat" src="img/modify.svg">
+            <a href="#"><img id="modifyMat" src="img/modify.svg"></a>
         </div>
         <div class="modify-Kevin">
-            <img id="modifyKe" src="img/modify.svg">
+            <a href="#"><img id="modifyKe" src="img/modify.svg"></a>
         </div>
         <div class="modify-Maxime">
-            <img id="modifyMax" src="img/modify.svg">
+            <a href="#"><img id="modifyMax" src="img/modify.svg"></a>
         </div>
     </div>
 
