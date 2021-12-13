@@ -150,18 +150,21 @@ a {
     border: none;
 }
 
-body{
-    background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
-    background-color: #C4C4C4;
-    background-size: 100%;
-    background-position: left top, right bottom;
-    background-repeat: no-repeat, no-repeat;
 
-}
 
 
 /* Format Telephone*/
-@media (max-width: 480px) {
+@media (max-width: 480px){
+
+    body{
+        background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
+        background-color: #C4C4C4;
+        background-size: 100%;
+        background-position: left top, right bottom;
+        background-repeat: no-repeat, no-repeat;
+
+
+    }
 
     * {
         box-sizing: border-box;
@@ -479,16 +482,253 @@ body{
 /*Format autre*/
 @media (min-width: 481px) {
 
+    body{
+        background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
+        background-color: #C4C4C4;
+        background-size: 50%;
+        background-position: left top, right bottom;
+        background-repeat: no-repeat, no-repeat;
+
+
+    }
+
+    * {
+        box-sizing: border-box;
+        scrollbar-color: transparent transparent; /* thumb and track color */
+        scrollbar-width: 0px;
+        -ms-overflow-style: none;
+    }
+
+    *::-webkit-scrollbar {
+        width: 0;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: transparent;
+        border: none;
+    }
+
     span.logo {
+
+
+        margin: 5vw auto 1vw auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        height: 22vw;
+        z-index: 16;
+        border: solid #7670F0 3px;
+        border-radius: 5vw;
+
+
+    }
+
+    .logo img{
+        width: 50vw;
+        margin-bottom: -0.7vw;
+    }
+
+
+
+    .search-bar input {
+        display: flex;
+        margin: 10vw auto 0 auto;
+
+
+        width: 45vw;
+        height: 7vw;
+
+        border: 1px solid #7670F0;
+        border-radius: 3px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 0.9em;
+        padding: 0.5em;
+        border: none;
+
+
+        border-bottom: solid 1px #ccc;
+        z-index: 9;
+    }
+
+
+    .search-bar input:focus {
+        transition: all 0.1s cubic-bezier(.17, .67, .34, .92);
+        outline: none;
+        border-bottom: solid 0.5vw #7670F0;
+    }
+
+    .burger, #menu, .logo-burger {
         display: none;
     }
 
-    .search-bar img {
-        display: none;
+    #menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
-    .burger {
-        display: none;
+
+
+    #menu ul li{
+        list-style: none;
+    }
+
+    #menu a{
+
+        margin: 1vw 2vw 0 2vw;
+
+    }
+
+    .carousel ol,.carousel li {
+        list-style: none;
+        margin: auto;
+        padding: 0;
+        height: 75%;
+        width: 75%;
+    }
+
+    .carousel {
+        position: relative;
+        padding-top: 75%;
+        filter: drop-shadow(0 0 10px #0003);
+        perspective: 100px;
+    }
+
+    .carousel__viewport {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel__slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .carousel__slide:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-40%,70px);
+        color: #fff;
+        font-size: 2em;
+    }
+
+    .carousel__snapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+
+    @media (hover: hover) {
+        .carousel__snapper {
+            animation-name: tonext, snap;
+            animation-timing-function: ease;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .carousel__slide:last-child .carousel__snapper {
+            animation-name: tostart, snap;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carousel__snapper {
+            animation-name: none;
+        }
+    }
+
+    .carousel:hover .carousel__snapper,
+    .carousel:focus-within .carousel__snapper {
+        animation-name: none;
+    }
+
+    .carousel::before,
+    .carousel::after,
+    .carousel__prev,
+    .carousel__next {
+        position: absolute;
+        top: 0;
+        margin-top: 28.5%;
+        width: 4rem;
+        height: 4rem;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        font-size: 0;
+        outline: 0;
+    }
+
+
+    .carousel::after,
+    .carousel__next {
+        right: -1rem;
+    }
+
+    .carousel::before,
+    .carousel::after {
+        width: 10vw;
+        height: 10vw;
+        content: '';
+        z-index: 1;
+        background-color: #7670F0;
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .carousel::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-left:10vw;
+        top: 8vw;
+    }
+
+    .carousel::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-right: 12vw;
+        top: 8vw;
+    }
+
+    .carousel #carousel__slide1{
+        background-image: url("../img/recom1.jpg");
+        background-size: 100%;
+    }
+
+    .carousel #carousel__slide2{
+        background-image: url("../img/recom2.jpg");
+        background-size: 100%;
+    }
+
+    .carousel #carousel__slide3{
+        background-image: url("../img/recom3.jpg");
+        background-size: 100%;
+    }
+
+    .carousel #carousel__slide4{
+        background-image: url("../img/recom4.jpg");
+        background-size: 100%;
     }
 }
 
