@@ -29,26 +29,52 @@
 
     <div class="recommendation">
 
-        <span id="recom1">
-            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
-            <img src="img/recom1.jpg" alt="">
-            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
-        </span>
-        <span id="recom2">
-            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
-            <img src="img/recom2.jpg" alt="">
-            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
-        </span>
-        <span id="recom3">
-            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
-            <img src="img/recom3.jpg" alt="">
-            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
-        </span>
+        <section class="carousel" aria-label="Gallery">
+            <ol class="carousel__viewport">
+                <li id="carousel__slide1"
+                    class="carousel__slide">
+                    <div class="carousel__snapper">
+                        <a href="#carousel__slide4"
+                           class="carousel__prev">Go to last slide</a>
+                        <a href="#carousel__slide2"
+                           class="carousel__next">Go to next slide</a>
+                    </div>
+                </li>
+                <li id="carousel__slide2"
+                    class="carousel__slide">
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide1"
+                       class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide3"
+                       class="carousel__next">Go to next slide</a>
+                </li>
+                <li id="carousel__slide3"
+                    class="carousel__slide">
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide2"
+                       class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide4"
+                       class="carousel__next">Go to next slide</a>
+                </li>
+                <li id="carousel__slide4"
+                    class="carousel__slide">
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide3"
+                       class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide1"
+                       class="carousel__next">Go to first slide</a>
+                </li>
+            </ol>
+
+        </section>
+
+
+
 
     </div>
 
 
-    <p></p>
+    <p class="bot"></p>
 </main>
 
 </body>
