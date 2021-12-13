@@ -10,7 +10,7 @@ a {
 }
 
 .search-bar input {
-    width: 250px;
+    width: 270px;
     margin-top: 1%;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -416,6 +416,13 @@ a {
         width: 10vw;
     }
 
+    .chooseProfile #retourHome{
+        position: absolute;
+        width: 10vw;
+        height: 5vw;
+        z-index: 2;
+    }
+
     .chooseProfile #titleWho{
         font-size: 4vw;
     }
@@ -434,6 +441,197 @@ a {
         right: 1vw;
         width: 6.5vw;
         height: 6.5vw;
-        opacity: 0.5;
+        opacity: 0;
+    }
+
+    .chooseProfile > .container{
+        display: inline-block;
+        width: 80vw;
+        height: 15vw;
+    }
+
+    .chooseProfile .container .LoïcPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 10vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .LoïcPicture #loïcPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .LoïcPicture #loïcPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .KurtPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 27vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .KurtPicture #kurtPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .KurtPicture #kurtPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .MateoPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 44vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .MateoPicture #mateoPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .MateoPicture #mateoPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .KevinPicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 61vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .KevinPicture #kevinPP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .KevinPicture #kevinPP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .container .MaximePicture {
+        align-items: center;
+        width: 10.5vw;
+        height: 17vw;
+        top: 15vw;
+        left: 78vw;
+        padding: 2%;
+    }
+
+    .chooseProfile .container .MaximePicture #maximePP{
+        width: 10vw;
+        background: #7670F0;
+        border: solid 2px;
+        border-radius: 5px;
+    }
+
+    .chooseProfile .container .MaximePicture #maximePP-label{
+        width: 10.5vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .chooseProfile .modify-overlay .modify-Loïc{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 14vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Loïc a #modifyL{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kurt{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 31vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kurt a #modifyKu{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Mateo{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 48vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Mateo a #modifyMat{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kevin{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 65vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Kevin a #modifyKe{
+        width: 7vw;
+        color: white;
+    }
+
+    .chooseProfile .modify-overlay .modify-Maxime{
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        top: 19vw;
+        left: 82vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chooseProfile .modify-overlay .modify-Maxime a #modifyMax{
+        width: 7vw;
+        color: white;
     }
 }
