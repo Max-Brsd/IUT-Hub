@@ -148,7 +148,9 @@ a {
     font-size: 0.9em;
     padding: 0.5em;
     border: none;
+}
 
+body{
     background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
     background-color: #C4C4C4;
     background-size: 100%;
