@@ -291,10 +291,20 @@ a {
 }
 
 .chooseProfile #logoIUT {
-    position: absolute;
+    position: fixed;
     width: 20vw;
-    top:0.5%;
-    left:1%;
+    top:0.5vw;
+    left:1vw;
+    z-index: 1;
+}
+
+.chooseProfile #retourHome{
+    position: fixed;
+    width: 20vw;
+    height: 10vw;
+    top: 0.5vw;
+    left: 1vw;
+    z-index: 2;
 }
 
 .chooseProfile #titleWho{
@@ -346,6 +356,15 @@ a {
 .chooseProfile #modifyButton:checked ~#finishButton{
     display: block;
 
+}
+
+.chooseProfile .container .LoïcPicture{
+    position: absolute;
+    width: 21vw;
+    height: 28vw;
+    top: 30%;
+    left: 27%;
+    padding: 2%;
 }
 
 .chooseProfile .container .LoïcPicture #loïcPP{
@@ -453,7 +472,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 31%;
+    top: 34%;
     left: 29%;
     display: flex;
     justify-content: center;
@@ -468,7 +487,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 31%;
+    top: 34%;
     left: 54%;
     display: flex;
     justify-content: center;
@@ -483,7 +502,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 48.5%;
+    top: 51.5%;
     left: 29%;
     display: flex;
     justify-content: center;
@@ -498,7 +517,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 48.5%;
+    top: 51.5%;
     left: 54%;
     display: flex;
     justify-content: center;
@@ -513,7 +532,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 66%;
+    top: 69%;
     left: 42%;
     display: flex;
     justify-content: center;
