@@ -1,6 +1,7 @@
-<?php require_once __DIR__."/includes/config.php"?>
+<?php require_once __DIR__ . "/includes/config.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
@@ -11,40 +12,45 @@
     <link rel="stylesheet" href="style/style.css">
     <title>IUT-Hub</title>
 
-    <link rel = "icon" href ="/img/logo_iuthub.png" type = "image/x-icon">
+    <link rel="icon" href="/img/logo_iuthub.png" type="image/x-icon">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
+
 <body>
 
 
 <?php require "modules/header.php"; ?>
 <main>
 
-    <span class="logo"><img src=<?= '"img/logo_iuthub.png'.webp().'"' ?>  alt=""></span>
-    <div class="search-bar">
-        <input type="text" id="search_bar" name="search_bar">
-        <img src="img/menu-icon.svg" alt="Logo menu burger">
-    </div>
 
+    <form class="search-bar" method="GET" action="query.php">
+        <input type="text" id="query" name="query" required>
+    </form>
 
     <div class="recommendation">
-        <img src="" alt=""> <!-- Film recommendation 1 -->
-        <a href="a"></a> <!-- Button visionage film-->
-        <img src="" alt=""> <!-- Film recommendation 2 -->
-        <a href=""></a> <!-- Button visionage film-->
-        <img src="" alt=""> <!-- Film recommendation 3 -->
-        <a href=""></a> <!-- Button visionage film-->
-        <img src="" alt=""> <!-- Film recommendation 4 -->
-        <a href=""></a> <!-- Button visionage film-->
+
+        <span id="recom1">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom1.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom2">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom2.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom3">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom3.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+
     </div>
 
-    <div class="account">
-        <a href="">Connection</a>
-        <a href="">Inscription</a>
-        <a href="">Student</a>
-        <a href="">Normal</a>
-        <a href="">Family</a>
-    </div>
+
+    <p></p>
 </main>
-</body>
-</html>
 
+</body>
+
+</html>

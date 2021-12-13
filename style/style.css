@@ -1,8 +1,48 @@
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes unspin {
+    100% {
+        -moz-transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes unspin {
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@keyframes unspin {
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+
 * {
     padding: 0;
     margin: 0;
     font-family: 'Comfortaa', cursive;
 }
+
 
 a {
     color: inherit;
@@ -10,7 +50,7 @@ a {
 }
 
 .search-bar input {
-    width: 270px;
+    width: 250px;
     margin-top: 1%;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -19,61 +59,185 @@ a {
     padding: 0.5em;
     border: none;
 
-    border-bottom: solid 1px #ccc;
+    background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
+    background-color: #C4C4C4;
+    background-size: 100%;
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
 
 }
 
-.search-bar input:focus{
-    transition: all 0.1s cubic-bezier(.17,.67,.34,.92);
-    outline: none;
-    border-bottom: solid 3px #242424;
-}
 
 /* Format Telephone*/
 @media (max-width: 480px) {
 
-    nav{
+    nav {
         display: none;
     }
 
-    span.logo {
+	/*LOGO de IUTHUB*/
+	span.logo {
 
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        height: 100%;
+        z-index: 16;
+
+    }
+
+    .search-bar input {
+        display: flex;
+        margin: auto;
+
+        width: 250px;
+
+        border: 1px solid #7670F0;
+        border-radius: 3px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 0.9em;
+        padding: 0.5em;
+        border: none;
+
+
+        border-bottom: solid 1px #ccc;
+        z-index: 9;
+    }
+
+
+    .search-bar input:focus {
+        transition: all 0.1s cubic-bezier(.17, .67, .34, .92);
+        outline: none;
+        border-bottom: solid 3px #7670F0;
+    }
+
+    .logo-burger {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: 25px;
+        width: 25px;
+        z-index: 15;
+    }
+
+    .burger {
+        opacity: 0%;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: 25px;
+        width: 25px;
+        z-index: 16;
+    }
+
+
+
+
+
+    .burger:checked ~ .logo-burger {
+        -webkit-animation: spin 0.5s linear;
+        -moz-animation: spin 0.5s linear;
+        animation: spin 0.5s linear;
+
+    }
+
+
+    .burger:not(:checked) ~ .logo-burger {
+
+
+        -webkit-animation: unspin 0.5s linear;
+        -moz-animation: unspin 0.5s linear;
+        animation: unspin 0.5s linear;
+
+
+    }
+
+	#menu
+	{
+		z-index: 14;
+		position: absolute;
+		width: 50vw;
+		height: 100%;
+		margin: -100px 0 0 -50px;
+		padding: 50px;
+		padding-top: 125px;
+
+		background: #7670F0;
+		list-style-type: none;
+		-webkit-font-smoothing: antialiased;
+
+
+
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        margin-left: 10px;
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+
+    #menu a:focus {
+        color: aqua;
+
+    }
+
+    .burger:checked ~ #menu{
+        transform: none;
+    }
+
+    .recommendation span{
+        margin-top: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
 
     }
 
-    .search-bar img{
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        height: 25px;
-        width: 25px;
+    .recommendation #ileft{
+        position: relative;
+        left: 10%;
     }
 
-    .burger {
-        opacity: 0;
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        height: 50px;
-        width: 50px;
-        z-index: 9;
+    .recommendation #iright{
+        position: relative;
+        right: 10%;
     }
-    .burger:checked{
-        background: aqua;
-    }
-    .burger-span{
 
+    .recommendation img{
 
+        width: 75%;
+        border: solid 2px;
+        border-radius: 5px;
     }
-    .burger-span::before{
 
+    .recommendation #recom1{
+        display: flex;
     }
-    .burger-span::after{
 
+    .recommendation #recom2{
+        display: flex;
     }
+
+    .recommendation #recom3{
+        display: none;
+    }
+
+    .recommendation #recom1:active{
+        display: none;
+    }
+
+    .recommendation #recom1:active{
+        display: none;
+    }
+
+    /*check carrousel*/
 
 
 }
@@ -85,7 +249,11 @@ a {
         display: none;
     }
 
-    .burger{
+    .search-bar img {
+        display: none;
+    }
+
+    .burger {
         display: none;
     }
 }
@@ -98,34 +266,35 @@ a {
 /*║                                                         ║*/
 /*╚═════════════════════════════════════════════════════════╝*/
 
-
-
 .chooseProfile{
     overflow-y: hidden;
     background: #C4C4C4;
 }
 
-.chooseProfile #imgBackgroundP1{
-    position: absolute;
+
+#imgBackgroundP1 {
+    display: flex;
     width: 100%;
     height: auto;
     bottom: 0;
     right: 0;
+
 }
 
-.chooseProfile #imgBackgroundP2{
-    position: absolute;
+#imgBackgroundP2 {
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
+
 }
 
-.chooseProfile #logoIUT{
+.chooseProfile #logoIUT {
     position: absolute;
     width: 20vw;
-    top: 0.5%;
-    left: 1%;
+    top:0.5%;
+    left:1%;
 }
 
 .chooseProfile #titleWho{
@@ -136,6 +305,7 @@ a {
     text-align: center;
     top: 1%;
     font-family: 'Comfortaa', cursive;
+
 }
 
 .chooseProfile #modifyText{
@@ -175,16 +345,7 @@ a {
 
 .chooseProfile #modifyButton:checked ~#finishButton{
     display: block;
-}
 
-.chooseProfile .container .LoïcPicture{
-    align-items: center;
-    position: absolute;
-    width: 21vw;
-    height: 28vw;
-    top: 30%;
-    left: 27%;
-    padding: 2%;
 }
 
 .chooseProfile .container .LoïcPicture #loïcPP{
