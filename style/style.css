@@ -494,7 +494,7 @@ body{
 }
 
 
-#imgBackgroundP1 {
+.chooseProfile #imgBackgroundP1 {
     display: flex;
     width: 100%;
     height: auto;
@@ -503,13 +503,12 @@ body{
 
 }
 
-#imgBackgroundP2 {
+.chooseProfile #imgBackgroundP2 {
     display: flex;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
-
 }
 
 .chooseProfile #logoIUT {
@@ -806,12 +805,21 @@ body{
 /*╚═════════════════════════════════════════════════════════╝*/
 
 @media (min-width: 560px) {
-    .chooseProfile #imgBackgroundP1{
+    .chooseProfile #imgBackgroundP1 {
+        position: absolute;
         width: 50vw;
+        height: auto;
+        bottom: 0;
+        right: 0;
+
     }
 
-    .chooseProfile #imgBackgroundP2{
+    .chooseProfile #imgBackgroundP2 {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 50vw;
+        height: auto;
     }
 
     .chooseProfile #logoIUT{
