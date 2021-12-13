@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:D:\Max\Documents\IUT-Hub\data\IUTHub.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="IUTHub [2]" uuid="ea033150-ea09-45e2-9de3-0b373c8975fd">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\imax2\Documents\IUT-Hub\data\IUTHub.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
