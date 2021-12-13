@@ -19,7 +19,7 @@
 
 	<?php 
 		if(!empty($_SESSION["admin"])){
-			echo "welcome ". $_SESSION["user"];
+			echo "welcome ". $_SESSION["name"];
 		}
 	?>
 
