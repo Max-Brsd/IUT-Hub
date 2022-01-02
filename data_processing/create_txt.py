@@ -11,5 +11,6 @@ con = sqlite3.connect('../data/IUTHub.db') #connexion a la base
 file = open('data.txt','w') #ouverture du fichier
 cur=con.cursor();
 for row in cur.execute('SELECT * from ranking'):
-    file.write((row))
+    file.write(str(row))
 file.close()
+con.close()
