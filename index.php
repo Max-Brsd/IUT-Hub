@@ -24,11 +24,12 @@
 
 
     <form class="search-bar" method="GET" action="query.php">
+
         <input type="text" id="query" name="query" required>
     </form>
 
     <div class="recommendation">
-
+        <h2>Recommendation</h2>
         <section class="carousel" aria-label="Gallery">
 
             <ol class="carousel__viewport">
@@ -73,6 +74,56 @@
 
 
     </div>
+
+    <div class="top-chart">
+        <h2>Tendance</h2>
+
+        <section class="carrousel" aria-label="Gallery">
+
+            <ol class="carrousel__viewport">
+                <li id="carrousel__slide1"
+                    class="carrousel__slide">
+                    <div class="carrousel__snapper">
+                        <a href="#carrousel__slide4"
+                           class="carrousel__prev">Go to last slide</a>
+                        <a href="#carrousel__slide2"
+                           class="carrousel__next">Go to next slide</a>
+                    </div>
+                </li>
+                <li id="carrousel__slide2"
+                    class="carrousel__slide">
+                    <div class="carrousel__snapper"></div>
+                    <a href="#carrousel__slide1"
+                       class="carrousel__prev">Go to previous slide</a>
+                    <a href="#carrousel__slide3"
+                       class="carrousel__next">Go to next slide</a>
+                </li>
+                <li id="carrousel__slide3"
+                    class="carrousel__slide">
+                    <div class="carrousel__snapper"></div>
+                    <a href="#carrousel__slide2"
+                       class="carrousel__prev">Go to previous slide</a>
+                    <a href="#carrousel__slide4"
+                       class="carrousel__next">Go to next slide</a>
+                </li>
+                <li id="carrousel__slide4"
+                    class="carrousel__slide">
+                    <div class="carrousel__snapper"></div>
+                    <a href="#carrousel__slide3"
+                       class="carrousel__prev">Go to previous slide</a>
+                    <a href="#carrousel__slide1"
+                       class="carrousel__next">Go to first slide</a>
+                </li>
+            </ol>
+
+        </section>
+
+
+
+
+    </div>
+
+
 
 
     <p class="bot"></p>

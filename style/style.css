@@ -131,6 +131,10 @@
     padding: 0;
     margin: 0;
     font-family: 'Comfortaa', cursive;
+    overflow-anchor: none !important;
+    scroll-snap-stop: normal !important;
+    overscroll-behavior: unset !important;
+    scroll-behavior: unset !important;
 }
 
 
@@ -140,6 +144,7 @@ a {
 }
 
 .search-bar input {
+    z-index: 15;
     width: 250px;
     margin-top: 1%;
     border: 1px solid #ccc;
@@ -148,7 +153,9 @@ a {
     font-size: 0.9em;
     padding: 0.5em;
     border: none;
+
 }
+
 
 
 
@@ -235,6 +242,14 @@ a {
 
         border-bottom: solid 1px #ccc;
         z-index: 9;
+
+    }
+
+    .search-bar-icon{
+        position: absolute;
+        top: 0;
+        z-index: 16;
+        background: url("../img/search-icon.svg") no-repeat scroll 0 0 transparent;
     }
 
 
@@ -473,6 +488,163 @@ a {
         background-size: 100%;
     }
 
+    .carrousel ol,.carrousel li {
+        list-style: none;
+        margin: auto;
+        padding: 0;
+        height: 77%;
+        width: 75%;
+    }
+
+    .carrousel {
+        position: relative;
+        padding-top: 75%;
+        filter: drop-shadow(0 0 10px #0003);
+        perspective: 100px;
+    }
+
+    .carrousel__viewport {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carrousel__slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .carrousel__slide:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-40%,70px);
+        color: #fff;
+        font-size: 2em;
+    }
+
+    .carrousel__snapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+
+    @media (hover: hover) {
+        .carrousel__snapper {
+            animation-name: tonext, snap;
+            animation-timing-function: ease;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .carrousel__slide:last-child .carrousel__snapper {
+            animation-name: tostart, snap;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carrousel__snapper {
+            animation-name: none;
+        }
+    }
+
+    .carrousel:hover .carrousel__snapper,
+    .carrousel:focus-within .carrousel__snapper {
+        animation-name: none;
+    }
+
+    .carrousel::before,
+    .carrousel::after,
+    .carrousel__prev,
+    .carrousel__next {
+        position: absolute;
+        top: 0;
+        margin-top: 28.5%;
+        width: 4rem;
+        height: 4rem;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        font-size: 0;
+        outline: 0;
+    }
+
+
+    .carrousel::after,
+    .carrousel__next {
+        right: -1rem;
+    }
+
+    .carrousel::before,
+    .carrousel::after {
+        width: 10vw;
+        height: 10vw;
+        content: '';
+        z-index: 1;
+        background-color: #7670F0;
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .carrousel::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-left: 10vw;
+        top: 7vw;
+    }
+
+    .carrousel::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-right: 15vw;
+        top: 7vw;
+    }
+
+    .carrousel #carrousel__slide1{
+        background-image: url("../img/top1.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide2{
+        background-image: url("../img/top2.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide3{
+        background-image: url("../img/top3.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide4{
+        background-image: url("../img/top4.jpg");
+        background-size: 100%;
+    }
+
+    .recommendation{
+        padding: -10vw;
+    }
+
+    .recommendation h2{
+        padding-top: 20vw;
+    }
+
+    h2{
+        text-align: center;
+    }
+
     /*check carrousel*/
 
 
@@ -590,6 +762,8 @@ a {
         list-style: none;
         margin: auto;
         padding: 0;
+        max-width: 60vw;
+        max-height: 45vw;
         height: 75%;
         width: 75%;
     }
@@ -684,8 +858,8 @@ a {
 
     .carousel::before,
     .carousel::after {
-        width: 10vw;
-        height: 10vw;
+        width: 5vw;
+        height: 5vw;
         content: '';
         z-index: 1;
         background-color: #7670F0;
@@ -701,13 +875,13 @@ a {
 
     .carousel::before {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-left:10vw;
+        margin-left:18vw;
         top: 8vw;
     }
 
     .carousel::after {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-right: 12vw;
+        margin-right: 20vw;
         top: 8vw;
     }
 
@@ -729,6 +903,169 @@ a {
     .carousel #carousel__slide4{
         background-image: url("../img/recom4.jpg");
         background-size: 100%;
+    }
+
+    .carrousel ol,.carrousel li {
+        list-style: none;
+        margin: auto;
+        padding: 0;
+        max-width: 60vw;
+        max-height: 45vw;
+        height: 75%;
+        width: 75%;
+    }
+
+    .carrousel {
+        position: relative;
+        padding-top: 75%;
+        filter: drop-shadow(0 0 10px #0003);
+        perspective: 100px;
+    }
+
+    .carrousel__viewport {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carrousel__slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .carrousel__slide:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-40%,70px);
+        color: #fff;
+        font-size: 2em;
+    }
+
+    .carrousel__snapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+
+    @media (hover: hover) {
+        .carrousel__snapper {
+            animation-name: tonext, snap;
+            animation-timing-function: ease;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .carrousel__slide:last-child .carrousel__snapper {
+            animation-name: tostart, snap;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carrousel__snapper {
+            animation-name: none;
+        }
+    }
+
+    .carrousel:hover .carrousel__snapper,
+    .carrousel:focus-within .carrousel__snapper {
+        animation-name: none;
+    }
+
+    .carrousel::before,
+    .carrousel::after,
+    .carrousel__prev,
+    .carrousel__next {
+        position: absolute;
+        top: 0;
+        margin-top: 28.5%;
+        width: 4rem;
+        height: 4rem;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        font-size: 0;
+        outline: 0;
+    }
+
+
+    .carrousel::after,
+    .carrousel__next {
+        right: -1rem;
+    }
+
+    .carrousel::before,
+    .carrousel::after {
+        width: 5vw;
+        height: 5vw;
+        content: '';
+        z-index: 1;
+        background-color: #7670F0;
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .carrousel::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-left:18vw;
+        top: 8vw;
+    }
+
+    .carrousel::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-right: 20vw;
+        top: 8vw;
+    }
+
+    .carrousel #carrousel__slide1{
+        background-image: url("../img/top1.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide2{
+        background-image: url("../img/top2.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide3{
+        background-image: url("../img/top3.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide4{
+        background-image: url("../img/top4.jpg");
+        background-size: 100%;
+    }
+
+    .recommendation h2{
+        padding-top: 20vw;
+
+
+    }
+
+    .top-chart{
+        
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: -20vw;
+        font-size: 50px;
     }
 }
 
