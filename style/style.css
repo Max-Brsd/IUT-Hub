@@ -1637,7 +1637,7 @@ a {
 
 /*╔═════════════════════════════════════════════════════════╗*/
 /*║                                                         ║*/
-/*║                 CSS Page chooseProfile                  ║*/
+/*║                   CSS Page Connexion                    ║*/
 /*║                       Mobile CSS                        ║*/
 /*║                                                         ║*/
 /*╚═════════════════════════════════════════════════════════╝*/
@@ -1769,13 +1769,15 @@ a {
     width: 35%;
     height: 70%;
     font-size: 5vw;
-    border: solid #EFEFEF 1px;
+    color: white;
+    border: solid black 1px;
+    background: black;
     border-radius: 10px;
 }
 
 /*╔═════════════════════════════════════════════════════════╗*/
 /*║                                                         ║*/
-/*║                 CSS Page chooseProfile                  ║*/
+/*║                   CSS Page Connexion                    ║*/
 /*║                       Desktop CSS                       ║*/
 /*║                                                         ║*/
 /*╚═════════════════════════════════════════════════════════╝*/
@@ -1900,7 +1902,451 @@ a {
         width: 35%;
         height: 70%;
         font-size: 3vw;
-        border: solid #EFEFEF 1px;
+        color: white;
+        border: solid black 1px;
+        background: black;
+        border-radius: 10px;
+    }
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                  CSS Page Inscription                   ║*/
+/*║                       Mobile CSS                        ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+.inscription{
+    overflow: hidden;
+    background: #C4C4C4;
+}
+
+.inscription #logo-acceuil{
+    width: 60vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inscription #part1{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.inscription #part2{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.inscription #iphone{
+    display: none;
+}
+
+.inscription .prenom-div{
+    position: absolute;
+    width: 40%;
+    top: 70vw;
+    left: 6vw;
+}
+
+.inscription .prenom-div #prenom{
+    width: 100%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .prenom-div #label-prenom{
+    position: absolute;
+    top: 1vw;
+    left: 0.5vw;
+    font-size: 5vw;
+}
+
+.inscription .prenom-div #prenom:focus + #label-prenom ,
+.inscription .prenom-div #prenom:valid + #label-prenom{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .nom-div{
+    position: absolute;
+    width: 40%;
+    top: 70vw;
+    right: 6vw;
+}
+
+.inscription .nom-div #nom{
+    width: 100%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .nom-div #label-nom{
+    position: absolute;
+    top: 1vw;
+    left: 0.5vw;
+    font-size: 5vw;
+}
+
+.inscription .nom-div #nom:focus + #label-nom ,
+.inscription .nom-div #nom:valid + #label-nom{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .email-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 85vw;
+}
+
+.inscription .email-div #email{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 88%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .email-div #label-email{
+    position: absolute;
+    font-size: 5vw;
+    top: 1vw;
+    left: 7vw;
+}
+
+.inscription .email-div #email:focus + #label-email ,
+.inscription .email-div #email:valid + #label-email{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .password-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 100vw;
+}
+
+.inscription .password-div #password{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 88%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .password-div #label-password{
+    position: absolute;
+    font-size: 5vw;
+    top: 1vw;
+    left: 7vw;
+}
+
+.inscription .password-div #password:focus + #label-password ,
+.inscription .password-div #password:valid + #label-password{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .Vpassword-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 115vw;
+}
+
+.inscription .Vpassword-div #Vpassword{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 88%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .Vpassword-div #label-Vpassword{
+    position: absolute;
+    font-size: 5vw;
+    top: 1vw;
+    left: 7vw;
+}
+
+.inscription .Vpassword-div #Vpassword:focus + #label-Vpassword ,
+.inscription .Vpassword-div #Vpassword:valid + #label-Vpassword{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .span-div{
+    position: absolute;
+    width: 100%;
+    height: 1vw;
+    top: 130vw;
+}
+
+.inscription .span-div #barre{
+    display:block;
+    height: 100%;
+    margin: 0 auto;
+    height: 0;
+    width: 95%;
+    border: solid black 1px;
+}
+
+.inscription .button-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 140vw;
+}
+
+.inscription .button-div #valide{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 70%;
+    font-size: 5vw;
+    color: white;
+    border: solid black 1px;
+    background: black;
+    border-radius: 10px;
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                   CSS Page Connexion                    ║*/
+/*║                       Desktop CSS                       ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+@media (min-width: 560px) {
+    .inscription #logo-acceuil{
+        width: 15vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .inscription #iphone{
+        display: block;
+        position: absolute;
+        width: 18vw;
+        top: 10vw;
+        left: 20vw;
+    }
+
+    .inscription #part1{
+        width: 50vw;
+    }
+    .inscription #part2{
+        width: 50vw;
+    }
+
+    .inscription .prenom-div{
+        position: absolute;
+        width: 15%;
+        top: 13vw;
+        left: 43vw;
+    }
+
+    .inscription .prenom-div #prenom{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .prenom-div #label-prenom{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .prenom-div #prenom:focus + #label-prenom ,
+    .inscription .prenom-div #prenom:valid + #label-prenom{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .nom-div{
+        position: absolute;
+        width: 15%;
+        top: 13vw;
+        left: 63vw;
+    }
+
+    .inscription .nom-div #nom{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .nom-div #label-nom{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .nom-div #nom:focus + #label-nom ,
+    .inscription .nom-div #nom:valid + #label-nom{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .email-div{
+        position: absolute;
+        width: 35%;
+        top: 19vw;
+        left: 43vw;
+    }
+
+    .inscription .email-div #email{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .email-div #label-email{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .email-div #email:focus + #label-email ,
+    .inscription .email-div #email:valid + #label-email{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .password-div{
+        position: absolute;
+        width: 35%;
+        top: 25vw;
+        left: 43vw;
+    }
+
+    .inscription .password-div #password{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .password-div #label-password{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .password-div #password:focus + #label-password ,
+    .inscription .password-div #password:valid + #label-password{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .Vpassword-div{
+        position: absolute;
+        width: 35%;
+        top: 31vw;
+        left: 43vw;
+    }
+
+    .inscription .Vpassword-div #Vpassword{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .Vpassword-div #label-Vpassword{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .Vpassword-div #Vpassword:focus + #label-Vpassword ,
+    .inscription .Vpassword-div #Vpassword:valid + #label-Vpassword{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .span-div{
+        position: absolute;
+        width: 50%;
+        height: 1vw;
+        top: 36vw;
+        left: 35vw;
+    }
+
+    .inscription .span-div #barre{
+        display:block;
+        width:100px;
+        height: 100%;
+        margin: 0 auto;
+        height: 0;
+        width: 85%;
+        background: black;
+        border: solid black 3px;
+    }
+
+    .inscription .button-div{
+        position: absolute;
+        width: 40%;
+        height: 5vw;
+        top: 40vw;
+        left: 39.5vw;
+    }
+
+    .inscription .button-div #valide{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 35%;
+        height: 70%;
+        font-size: 3vw;
+        color: white;
+        border: solid black 1px;
+        background: black;
         border-radius: 10px;
     }
 }

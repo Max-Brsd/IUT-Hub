@@ -27,7 +27,7 @@ require_once __DIR__."/includes/config.php";
 						}
 					 ?>
                 <div class="email-div">
-					<input id="email" type="text" name="email" required>
+					<input id="email" type="email" name="email" required>
                     <label for="email" id="label-email">Email : </label>
                 </div>
                 <div class="password-div">

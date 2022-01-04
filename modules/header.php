@@ -5,7 +5,7 @@
 	<img class="logo-burger" src="img/menu-icon.svg" alt="Logo menu burger">
 
 	<ul id="menu">
-		<a href=""><li>Connexion</li></a>
+		<a href="login.php"><li>Connexion</li></a>
 		<a href=""><li>Inscription</li></a>
 		<a href=""><li>Etudiant</li></a>
 		<a href=""><li>Normal</li></a>
