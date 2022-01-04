@@ -1084,7 +1084,7 @@ a {
 
 
 .chooseProfile #imgBackgroundP1 {
-    display: flex;
+    position: absolute;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -1093,7 +1093,7 @@ a {
 }
 
 .chooseProfile #imgBackgroundP2 {
-    display: flex;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

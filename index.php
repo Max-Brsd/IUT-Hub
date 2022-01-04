@@ -1,7 +1,6 @@
 <?php require_once __DIR__ . "/includes/config.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
@@ -17,16 +16,35 @@
 </head>
 
 <body>
-
-
 <?php require "modules/header.php"; ?>
 <main>
 
 
-    <form class="search-bar" method="GET" action="query.php">
-
+    <form class="search-bar" method="GET" action="index.php">
         <input type="text" id="query" name="query" required>
     </form>
+
+    <?php
+        if(isset($_GET['query']) && is_string($_GET['query'])){
+            try {
+                $pdo = new PDO('sqlite:'.__DIR__.'/data/IUTHub.db');
+                $statement = $pdo->prepare("SELECT * FROM movies where lower(title) like lower('%:query%')");
+                $statement->execute(
+                    [
+                        'query' => $_GET['query']
+                    ]
+                );
+
+                $selection = $statement->fetchAll();
+                echo 'made it this far bud';
+                var_dump($selection);
+            }catch(PDOException $e) {
+                echo $e->getMessage();
+                die();
+            }
+        }
+
+    ?>
 
     <div class="recommendation">
         <h2>Recommendation</h2>

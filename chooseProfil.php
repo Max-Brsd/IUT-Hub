@@ -20,7 +20,7 @@
         <img id="logoIUT" src="img/logo_iuthub2.png">
     </a>
 
-    <h2 id="titleWho">Qui est-ce ?</h2>
+    <h2 id="titleWho">Ptdr t qui ?</h2>
         <input type="checkbox" id="modifyButton" name="checkBox">
     <p id="modifyText">Modifier</p>
     <p id="finishButton">Terminer</p>
