@@ -33,14 +33,22 @@
                 $pdo = new PDO('sqlite:'.__DIR__.'/data/IUTHub.db');
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $statement = $pdo->prepare("SELECT * FROM movies WHERE title LIKE '%:query%'");
+                
+                $statement = $pdo->prepare("SELECT * FROM movies WHERE title LIKE :query");
+                
 
-                $statement->execute(['query' => $_GET['query']]);
+                $str = '%'.$_GET['query'].'%';
+                $statement->bindParam(':query', $str);
+                $statement->execute();
 
+                //var_dump($statement);
                 $movieList = $statement->fetchAll();
+                //var_dump($movieList);
 
                 foreach($movieList as $movie){
-                    echo '<a class="thumbnail" href="watch?movie='.$movie['title'].'" >'.$movie['title'].'</a>';
+                    echo '<a class="thumbnail" href="watch?movie='.$movie['title'].'" >
+                        <img class="thumbnail-image" alt="'.$movie['description'].'" src="https://picsum.photos/150/150?3">
+                    '.$movie['title'].'</a>';
                 }
             } catch(PDOException $e){
                 echo $e->getMessage();
