@@ -25,6 +25,7 @@ create table account (
 create table movies (
 	idMovie INTEGER NOT NULL,
 	title varchar(255),
+    annee INTEGER,
 	description text,
 	movieUrl varchar(255),
 	primary key ("idMovie")
