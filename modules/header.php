@@ -6,7 +6,7 @@
 
 	<ul id="menu">
 		<a href="login.php"><li>Connexion</li></a>
-		<a href=""><li>Inscription</li></a>
+		<a href="inscription.php"><li>Inscription</li></a>
 		<a href=""><li>Etudiant</li></a>
 		<a href=""><li>Normal</li></a>
 		<a href=""><li>Famille</li></a>
