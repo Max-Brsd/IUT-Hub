@@ -23,9 +23,30 @@
 <main>
 
 
-    <form class="search-bar" method="GET" action="query.php">
+    <form class="search-bar" method="GET" action="index.php">
         <input type="text" id="query" name="query" required>
     </form>
+
+    <?php
+        if(isset($_GET['query']) && ! empty($_GET['query'])){
+            try {
+                $pdo = new PDO('sqlite:'.__DIR__.'/data/IUTHub.db');
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $statement = $pdo->prepare("SELECT * FROM movies WHERE title LIKE '%:query%'");
+
+                $statement->execute(['query' => $_GET['query']]);
+
+                $movieList = $statement->fetchAll();
+
+                foreach($movieList as $movie){
+                    echo '<a class="thumbnail" href="watch?movie='.$movie['title'].'" >'.$movie['title'].'</a>';
+                }
+            } catch(PDOException $e){
+                echo $e->getMessage();
+            }
+        }
+    ?>
 
     <div class="recommendation">
 
