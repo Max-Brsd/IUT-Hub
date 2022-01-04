@@ -10,10 +10,14 @@ require_once __DIR__."/includes/config.php";
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Comfortaa" />
 		<link rel="icon" type="image/png" href="favicon.ico" />
 		<title>Connexion</title>
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="style/style.css">
 	</head>
-	<body>
-		<?php include 'modules/header.php'; ?>
+	<body class="login">
+        <a href="index.php"><img src="img/logo_iuthub2.png" id="logo-acceuil"></a>
+        <img src="img/part-2.png" id="part2">
+        <img src="img/part-1.png" id="part1">
+
+        <img src="img/icon-iphone.svg" id="iphone">
 		<main>
 			<form id="form-login" method="POST" enctype="multipart/form-data" action="modules/logme.php">
 					<?php
@@ -24,14 +28,17 @@ require_once __DIR__."/includes/config.php";
 					 ?>
                 <div class="email-div">
 					<input id="email" type="text" name="email" required>
-                    <label for="email" id="label-email">Email: </label>
+                    <label for="email" id="label-email">Email : </label>
                 </div>
                 <div class="password-div">
 					<input id="password" type="password" name="password" required>
-                    <label for="password" id="label-password">Mot de passe: </label>
+                    <label for="password" id="label-password">Mot de passe : </label>
+                </div>
+                <div class="span-div">
+                    <span id="barre"></span>
                 </div>
                 <div class="button-div">
-					<button type="submit">Valider</button>
+					<button type="submit" id="valide">Valider</button>
                 </div>
 			</form>
 		</main>

@@ -1634,3 +1634,273 @@ a {
         color: white;
     }
 }
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                 CSS Page chooseProfile                  ║*/
+/*║                       Mobile CSS                        ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+.login{
+    overflow: hidden;
+    background: #C4C4C4;
+}
+
+.login #logo-acceuil{
+    width: 60vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login #part1{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.login #part2{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.login #iphone{
+    display: none;
+}
+
+.login .email-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 70vw;
+}
+
+.login .email-div #email{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.login .email-div #label-email{
+    position: absolute;
+    font-size: 4vw;
+    top: 1vw;
+    left: 21vw;
+}
+
+.login .email-div #email:focus + #label-email ,
+.login .email-div #email:valid + #label-email{
+    top: -5vw;
+    font-size: 4vw;
+    transition: ease 0.3s;
+}
+
+.login .password-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 85vw;
+}
+
+.login .password-div #password{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.login .password-div #label-password{
+    position: absolute;
+    font-size: 4vw;
+    top: 1vw;
+    left: 21vw;
+}
+
+.login .password-div #password:focus + #label-password ,
+.login .password-div #password:valid + #label-password{
+    top: -5vw;
+    font-size: 4vw;
+    transition: ease 0.3s;
+}
+
+.login .span-div{
+    position: absolute;
+    width: 100%;
+    height: 1vw;
+    top: 95vw;
+}
+
+.login .span-div #barre{
+    display:block;
+    width:100px;
+    height: 100%;
+    margin: 0 auto;
+    height: 0;
+    width: 85%;
+    border: solid black 1px;
+}
+
+.login .button-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 100vw;
+}
+
+.login .button-div #valide{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 70%;
+    font-size: 5vw;
+    border: solid #EFEFEF 1px;
+    border-radius: 10px;
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                 CSS Page chooseProfile                  ║*/
+/*║                       Desktop CSS                       ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+@media (min-width: 560px) {
+    .login #logo-acceuil{
+        width: 15vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login #iphone{
+        display: block;
+        position: absolute;
+        width: 18vw;
+        top: 10vw;
+        left: 20vw;
+    }
+
+    .login #part1{
+        width: 50vw;
+    }
+    .login #part2{
+        width: 50vw;
+    }
+
+    .login .email-div{
+        position: absolute;
+        width: 50%;
+        height: 5vw;
+        top: 15vw;
+        left: 35vw;
+    }
+
+    .login .email-div #email{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        height: 60%;
+        border: solid black 1px;
+        border-radius: 10px;
+    }
+
+    .login .email-div #label-email{
+        position: absolute;
+        font-size: 2.5vw;
+        top: 0.3vw;
+        left: 10vw;
+    }
+
+    .login .email-div #email:focus + #label-email ,
+    .login .email-div #email:valid + #label-email{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .login .password-div{
+        position: absolute;
+        width: 50%;
+        height: 5vw;
+        top: 22vw;
+        left: 35vw;
+    }
+
+    .login .password-div #password{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        height: 60%;
+        border: solid black 1px;
+        border-radius: 5px;
+    }
+
+    .login .password-div #label-password{
+        position: absolute;
+        font-size: 2.5vw;
+        top: 0.3vw;
+        left: 10vw;
+    }
+
+    .login .password-div #password:focus + #label-password ,
+    .login .password-div #password:valid + #label-password{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .login .span-div{
+        position: absolute;
+        width: 50%;
+        height: 1vw;
+        top: 28vw;
+        left: 35vw;
+    }
+
+    .login .span-div #barre{
+        display:block;
+        width:100px;
+        height: 100%;
+        margin: 0 auto;
+        height: 0;
+        width: 85%;
+        border: solid black 3px;
+    }
+
+    .login .button-div{
+        position: absolute;
+        width: 40%;
+        height: 5vw;
+        top: 31vw;
+        left: 39.5vw;
+    }
+
+    .login .button-div #valide{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 35%;
+        height: 70%;
+        font-size: 3vw;
+        border: solid #EFEFEF 1px;
+        border-radius: 10px;
+    }
+}
