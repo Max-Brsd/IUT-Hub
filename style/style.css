@@ -131,6 +131,10 @@
     padding: 0;
     margin: 0;
     font-family: 'Comfortaa', cursive;
+    overflow-anchor: none !important;
+    scroll-snap-stop: normal !important;
+    overscroll-behavior: unset !important;
+    scroll-behavior: unset !important;
 }
 
 
@@ -140,6 +144,7 @@ a {
 }
 
 .search-bar input {
+    z-index: 15;
     width: 250px;
     margin-top: 1%;
     border: 1px solid #ccc;
@@ -148,7 +153,9 @@ a {
     font-size: 0.9em;
     padding: 0.5em;
     border: none;
+
 }
+
 
 
 
@@ -235,6 +242,14 @@ a {
 
         border-bottom: solid 1px #ccc;
         z-index: 9;
+
+    }
+
+    .search-bar-icon{
+        position: absolute;
+        top: 0;
+        z-index: 16;
+        background: url("../img/search-icon.svg") no-repeat scroll 0 0 transparent;
     }
 
 
@@ -473,6 +488,163 @@ a {
         background-size: 100%;
     }
 
+    .carrousel ol,.carrousel li {
+        list-style: none;
+        margin: auto;
+        padding: 0;
+        height: 77%;
+        width: 75%;
+    }
+
+    .carrousel {
+        position: relative;
+        padding-top: 75%;
+        filter: drop-shadow(0 0 10px #0003);
+        perspective: 100px;
+    }
+
+    .carrousel__viewport {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carrousel__slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .carrousel__slide:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-40%,70px);
+        color: #fff;
+        font-size: 2em;
+    }
+
+    .carrousel__snapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+
+    @media (hover: hover) {
+        .carrousel__snapper {
+            animation-name: tonext, snap;
+            animation-timing-function: ease;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .carrousel__slide:last-child .carrousel__snapper {
+            animation-name: tostart, snap;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carrousel__snapper {
+            animation-name: none;
+        }
+    }
+
+    .carrousel:hover .carrousel__snapper,
+    .carrousel:focus-within .carrousel__snapper {
+        animation-name: none;
+    }
+
+    .carrousel::before,
+    .carrousel::after,
+    .carrousel__prev,
+    .carrousel__next {
+        position: absolute;
+        top: 0;
+        margin-top: 28.5%;
+        width: 4rem;
+        height: 4rem;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        font-size: 0;
+        outline: 0;
+    }
+
+
+    .carrousel::after,
+    .carrousel__next {
+        right: -1rem;
+    }
+
+    .carrousel::before,
+    .carrousel::after {
+        width: 10vw;
+        height: 10vw;
+        content: '';
+        z-index: 1;
+        background-color: #7670F0;
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .carrousel::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-left: 10vw;
+        top: 7vw;
+    }
+
+    .carrousel::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-right: 15vw;
+        top: 7vw;
+    }
+
+    .carrousel #carrousel__slide1{
+        background-image: url("../img/top1.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide2{
+        background-image: url("../img/top2.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide3{
+        background-image: url("../img/top3.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide4{
+        background-image: url("../img/top4.jpg");
+        background-size: 100%;
+    }
+
+    .recommendation{
+        padding: -10vw;
+    }
+
+    .recommendation h2{
+        padding-top: 20vw;
+    }
+
+    h2{
+        text-align: center;
+    }
+
     /*check carrousel*/
 
 
@@ -590,6 +762,8 @@ a {
         list-style: none;
         margin: auto;
         padding: 0;
+        max-width: 60vw;
+        max-height: 45vw;
         height: 75%;
         width: 75%;
     }
@@ -684,8 +858,8 @@ a {
 
     .carousel::before,
     .carousel::after {
-        width: 10vw;
-        height: 10vw;
+        width: 5vw;
+        height: 5vw;
         content: '';
         z-index: 1;
         background-color: #7670F0;
@@ -701,13 +875,13 @@ a {
 
     .carousel::before {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-left:10vw;
+        margin-left:18vw;
         top: 8vw;
     }
 
     .carousel::after {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-right: 12vw;
+        margin-right: 20vw;
         top: 8vw;
     }
 
@@ -730,6 +904,169 @@ a {
         background-image: url("../img/recom4.jpg");
         background-size: 100%;
     }
+
+    .carrousel ol,.carrousel li {
+        list-style: none;
+        margin: auto;
+        padding: 0;
+        max-width: 60vw;
+        max-height: 45vw;
+        height: 75%;
+        width: 75%;
+    }
+
+    .carrousel {
+        position: relative;
+        padding-top: 75%;
+        filter: drop-shadow(0 0 10px #0003);
+        perspective: 100px;
+    }
+
+    .carrousel__viewport {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carrousel__slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .carrousel__slide:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-40%,70px);
+        color: #fff;
+        font-size: 2em;
+    }
+
+    .carrousel__snapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+
+    @media (hover: hover) {
+        .carrousel__snapper {
+            animation-name: tonext, snap;
+            animation-timing-function: ease;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .carrousel__slide:last-child .carrousel__snapper {
+            animation-name: tostart, snap;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carrousel__snapper {
+            animation-name: none;
+        }
+    }
+
+    .carrousel:hover .carrousel__snapper,
+    .carrousel:focus-within .carrousel__snapper {
+        animation-name: none;
+    }
+
+    .carrousel::before,
+    .carrousel::after,
+    .carrousel__prev,
+    .carrousel__next {
+        position: absolute;
+        top: 0;
+        margin-top: 28.5%;
+        width: 4rem;
+        height: 4rem;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        font-size: 0;
+        outline: 0;
+    }
+
+
+    .carrousel::after,
+    .carrousel__next {
+        right: -1rem;
+    }
+
+    .carrousel::before,
+    .carrousel::after {
+        width: 5vw;
+        height: 5vw;
+        content: '';
+        z-index: 1;
+        background-color: #7670F0;
+        background-size: 1rem 1rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .carrousel::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-left:18vw;
+        top: 8vw;
+    }
+
+    .carrousel::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+        margin-right: 20vw;
+        top: 8vw;
+    }
+
+    .carrousel #carrousel__slide1{
+        background-image: url("../img/top1.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide2{
+        background-image: url("../img/top2.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide3{
+        background-image: url("../img/top3.jpg");
+        background-size: 100%;
+    }
+
+    .carrousel #carrousel__slide4{
+        background-image: url("../img/top4.jpg");
+        background-size: 100%;
+    }
+
+    .recommendation h2{
+        padding-top: 20vw;
+
+
+    }
+
+    .top-chart{
+        
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: -20vw;
+        font-size: 50px;
+    }
 }
 
 
@@ -747,7 +1084,7 @@ a {
 
 
 .chooseProfile #imgBackgroundP1 {
-    display: flex;
+    position: absolute;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -756,7 +1093,7 @@ a {
 }
 
 .chooseProfile #imgBackgroundP2 {
-    display: flex;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -1295,5 +1632,721 @@ a {
     .chooseProfile .modify-overlay .modify-Maxime a #modifyMax{
         width: 7vw;
         color: white;
+    }
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                   CSS Page Connexion                    ║*/
+/*║                       Mobile CSS                        ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+.login{
+    overflow: hidden;
+    background: #C4C4C4;
+}
+
+.login #logo-acceuil{
+    width: 60vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login #part1{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.login #part2{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.login #iphone{
+    display: none;
+}
+
+.login .email-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 70vw;
+}
+
+.login .email-div #email{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.login .email-div #label-email{
+    position: absolute;
+    font-size: 4vw;
+    top: 1vw;
+    left: 21vw;
+}
+
+.login .email-div #email:focus + #label-email ,
+.login .email-div #email:valid + #label-email{
+    top: -5vw;
+    font-size: 4vw;
+    transition: ease 0.3s;
+}
+
+.login .password-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 85vw;
+}
+
+.login .password-div #password{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.login .password-div #label-password{
+    position: absolute;
+    font-size: 4vw;
+    top: 1vw;
+    left: 21vw;
+}
+
+.login .password-div #password:focus + #label-password ,
+.login .password-div #password:valid + #label-password{
+    top: -5vw;
+    font-size: 4vw;
+    transition: ease 0.3s;
+}
+
+.login .span-div{
+    position: absolute;
+    width: 100%;
+    height: 1vw;
+    top: 95vw;
+}
+
+.login .span-div #barre{
+    display:block;
+    width:100px;
+    height: 100%;
+    margin: 0 auto;
+    height: 0;
+    width: 85%;
+    border: solid black 1px;
+}
+
+.login .button-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 100vw;
+}
+
+.login .button-div #valide{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 70%;
+    font-size: 5vw;
+    color: white;
+    border: solid black 1px;
+    background: black;
+    border-radius: 10px;
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                   CSS Page Connexion                    ║*/
+/*║                       Desktop CSS                       ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+@media (min-width: 560px) {
+    .login #logo-acceuil{
+        width: 15vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login #iphone{
+        display: block;
+        position: absolute;
+        width: 18vw;
+        top: 10vw;
+        left: 20vw;
+    }
+
+    .login #part1{
+        width: 50vw;
+    }
+    .login #part2{
+        width: 50vw;
+    }
+
+    .login .email-div{
+        position: absolute;
+        width: 50%;
+        height: 5vw;
+        top: 15vw;
+        left: 35vw;
+    }
+
+    .login .email-div #email{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        height: 60%;
+        border: solid black 1px;
+        border-radius: 10px;
+    }
+
+    .login .email-div #label-email{
+        position: absolute;
+        font-size: 2.5vw;
+        top: 0.3vw;
+        left: 10vw;
+    }
+
+    .login .email-div #email:focus + #label-email ,
+    .login .email-div #email:valid + #label-email{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .login .password-div{
+        position: absolute;
+        width: 50%;
+        height: 5vw;
+        top: 22vw;
+        left: 35vw;
+    }
+
+    .login .password-div #password{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        height: 60%;
+        border: solid black 1px;
+        border-radius: 5px;
+    }
+
+    .login .password-div #label-password{
+        position: absolute;
+        font-size: 2.5vw;
+        top: 0.3vw;
+        left: 10vw;
+    }
+
+    .login .password-div #password:focus + #label-password ,
+    .login .password-div #password:valid + #label-password{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .login .span-div{
+        position: absolute;
+        width: 50%;
+        height: 1vw;
+        top: 28vw;
+        left: 35vw;
+    }
+
+    .login .span-div #barre{
+        display:block;
+        width:100px;
+        height: 100%;
+        margin: 0 auto;
+        height: 0;
+        width: 85%;
+        border: solid black 3px;
+    }
+
+    .login .button-div{
+        position: absolute;
+        width: 40%;
+        height: 5vw;
+        top: 31vw;
+        left: 39.5vw;
+    }
+
+    .login .button-div #valide{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 35%;
+        height: 70%;
+        font-size: 3vw;
+        color: white;
+        border: solid black 1px;
+        background: black;
+        border-radius: 10px;
+    }
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                  CSS Page Inscription                   ║*/
+/*║                       Mobile CSS                        ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+.inscription{
+    overflow: hidden;
+    background: #C4C4C4;
+}
+
+.inscription #logo-acceuil{
+    width: 60vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inscription #part1{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.inscription #part2{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.inscription #iphone{
+    display: none;
+}
+
+.inscription .prenom-div{
+    position: absolute;
+    width: 40%;
+    top: 70vw;
+    left: 6vw;
+}
+
+.inscription .prenom-div #prenom{
+    width: 100%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .prenom-div #label-prenom{
+    position: absolute;
+    top: 1vw;
+    left: 0.5vw;
+    font-size: 5vw;
+}
+
+.inscription .prenom-div #prenom:focus + #label-prenom ,
+.inscription .prenom-div #prenom:valid + #label-prenom{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .nom-div{
+    position: absolute;
+    width: 40%;
+    top: 70vw;
+    right: 6vw;
+}
+
+.inscription .nom-div #nom{
+    width: 100%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .nom-div #label-nom{
+    position: absolute;
+    top: 1vw;
+    left: 0.5vw;
+    font-size: 5vw;
+}
+
+.inscription .nom-div #nom:focus + #label-nom ,
+.inscription .nom-div #nom:valid + #label-nom{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .email-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 85vw;
+}
+
+.inscription .email-div #email{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 88%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .email-div #label-email{
+    position: absolute;
+    font-size: 5vw;
+    top: 1vw;
+    left: 7vw;
+}
+
+.inscription .email-div #email:focus + #label-email ,
+.inscription .email-div #email:valid + #label-email{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .password-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 100vw;
+}
+
+.inscription .password-div #password{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 88%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .password-div #label-password{
+    position: absolute;
+    font-size: 5vw;
+    top: 1vw;
+    left: 7vw;
+}
+
+.inscription .password-div #password:focus + #label-password ,
+.inscription .password-div #password:valid + #label-password{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .Vpassword-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 115vw;
+}
+
+.inscription .Vpassword-div #Vpassword{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 88%;
+    height: 7vw;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.inscription .Vpassword-div #label-Vpassword{
+    position: absolute;
+    font-size: 5vw;
+    top: 1vw;
+    left: 7vw;
+}
+
+.inscription .Vpassword-div #Vpassword:focus + #label-Vpassword ,
+.inscription .Vpassword-div #Vpassword:valid + #label-Vpassword{
+    top: -5.5vw;
+    font-size: 5vw;
+    transition: ease 0.3s;
+}
+
+.inscription .span-div{
+    position: absolute;
+    width: 100%;
+    height: 1vw;
+    top: 130vw;
+}
+
+.inscription .span-div #barre{
+    display:block;
+    height: 100%;
+    margin: 0 auto;
+    height: 0;
+    width: 95%;
+    border: solid black 1px;
+}
+
+.inscription .button-div{
+    position: absolute;
+    width: 100%;
+    height: 10vw;
+    top: 140vw;
+}
+
+.inscription .button-div #valide{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 70%;
+    font-size: 5vw;
+    color: white;
+    border: solid black 1px;
+    background: black;
+    border-radius: 10px;
+}
+
+/*╔═════════════════════════════════════════════════════════╗*/
+/*║                                                         ║*/
+/*║                   CSS Page Connexion                    ║*/
+/*║                       Desktop CSS                       ║*/
+/*║                                                         ║*/
+/*╚═════════════════════════════════════════════════════════╝*/
+
+@media (min-width: 560px) {
+    .inscription #logo-acceuil{
+        width: 15vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .inscription #iphone{
+        display: block;
+        position: absolute;
+        width: 18vw;
+        top: 10vw;
+        left: 20vw;
+    }
+
+    .inscription #part1{
+        width: 50vw;
+    }
+    .inscription #part2{
+        width: 50vw;
+    }
+
+    .inscription .prenom-div{
+        position: absolute;
+        width: 15%;
+        top: 13vw;
+        left: 43vw;
+    }
+
+    .inscription .prenom-div #prenom{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .prenom-div #label-prenom{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .prenom-div #prenom:focus + #label-prenom ,
+    .inscription .prenom-div #prenom:valid + #label-prenom{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .nom-div{
+        position: absolute;
+        width: 15%;
+        top: 13vw;
+        left: 63vw;
+    }
+
+    .inscription .nom-div #nom{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .nom-div #label-nom{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .nom-div #nom:focus + #label-nom ,
+    .inscription .nom-div #nom:valid + #label-nom{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .email-div{
+        position: absolute;
+        width: 35%;
+        top: 19vw;
+        left: 43vw;
+    }
+
+    .inscription .email-div #email{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .email-div #label-email{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .email-div #email:focus + #label-email ,
+    .inscription .email-div #email:valid + #label-email{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .password-div{
+        position: absolute;
+        width: 35%;
+        top: 25vw;
+        left: 43vw;
+    }
+
+    .inscription .password-div #password{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .password-div #label-password{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .password-div #password:focus + #label-password ,
+    .inscription .password-div #password:valid + #label-password{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .Vpassword-div{
+        position: absolute;
+        width: 35%;
+        top: 31vw;
+        left: 43vw;
+    }
+
+    .inscription .Vpassword-div #Vpassword{
+        width: 100%;
+        height: 3vw;
+        border: solid black 1px;
+        border-radius: 10px;
+        font-size: 1.5vw;
+    }
+
+    .inscription .Vpassword-div #label-Vpassword{
+        position: absolute;
+        top: 0.3vw;
+        left: 0.5vw;
+        font-size: 2.5vw;
+    }
+
+    .inscription .Vpassword-div #Vpassword:focus + #label-Vpassword ,
+    .inscription .Vpassword-div #Vpassword:valid + #label-Vpassword{
+        top: -2.5vw;
+        font-size: 2.5vw;
+        transition: ease 0.3s;
+    }
+
+    .inscription .span-div{
+        position: absolute;
+        width: 50%;
+        height: 1vw;
+        top: 36vw;
+        left: 35vw;
+    }
+
+    .inscription .span-div #barre{
+        display:block;
+        width:100px;
+        height: 100%;
+        margin: 0 auto;
+        height: 0;
+        width: 85%;
+        background: black;
+        border: solid black 3px;
+    }
+
+    .inscription .button-div{
+        position: absolute;
+        width: 40%;
+        height: 5vw;
+        top: 40vw;
+        left: 39.5vw;
+    }
+
+    .inscription .button-div #valide{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 35%;
+        height: 70%;
+        font-size: 3vw;
+        color: white;
+        border: solid black 1px;
+        background: black;
+        border-radius: 10px;
     }
 }
