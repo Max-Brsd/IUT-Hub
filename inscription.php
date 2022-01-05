@@ -19,7 +19,13 @@ require_once __DIR__."/includes/config.php";
 
 <img src="img/icon-iphone.svg" id="iphone">
 <main>
-    <form id="form-login" method="POST" enctype="multipart/form-data" action="modules/logme.php">
+<form id="form-login" method="POST" enctype="multipart/form-data" action="modules/signin.php">
+        <?php
+			if(isset($_SESSION['error']) && $_SESSION['error']){
+				unset($_SESSION['error']);
+				echo "<a>Error in the login, password or mail incorrect</a>";
+			}
+		?>
         <div class="prenom-div">
             <input id="prenom" type="text" name="prenom" required>
             <label for="prenom" id="label-prenom">Prénom : </label>

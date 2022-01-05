@@ -25,25 +25,33 @@
     </form>
 
     <?php
-        if(isset($_GET['query']) && is_string($_GET['query'])){
+        if(isset($_GET['query']) && ! empty($_GET['query'])){
             try {
                 $pdo = new PDO('sqlite:'.__DIR__.'/data/IUTHub.db');
-                $statement = $pdo->prepare("SELECT * FROM movies where lower(title) like lower('%:query%')");
-                $statement->execute(
-                    [
-                        'query' => $_GET['query']
-                    ]
-                );
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $selection = $statement->fetchAll();
-                echo 'made it this far bud';
-                var_dump($selection);
-            }catch(PDOException $e) {
+                
+                $statement = $pdo->prepare("SELECT * FROM movies WHERE title LIKE :query");
+                
+
+                $str = '%'.$_GET['query'].'%';
+                $statement->bindParam(':query', $str);
+                $statement->execute();
+
+                //var_dump($statement);
+                $movieList = $statement->fetchAll();
+                //var_dump($movieList);
+
+                foreach($movieList as $movie){
+                    echo '<div class="thumbnail">
+                        <img class="thumbnail-image" alt="'.$movie['description'].'" src="https://picsum.photos/150/150?3">
+                        <a href="watch?movie='.$movie['title'].'">'.$movie['title'].'</a>
+                    </div>';
+                }
+            } catch(PDOException $e){
                 echo $e->getMessage();
-                die();
             }
         }
-
     ?>
 
     <div class="recommendation">
