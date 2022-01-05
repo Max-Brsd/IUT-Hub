@@ -5,7 +5,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 	try {
 		$pdo = new PDO('sqlite:'.__DIR__.'/../data/IUTHub.db');
-		$statement = $pdo->prepare("SELECT * FROM users WHERE email =:email");
+		$statement = $pdo->prepare("SELECT * FROM account WHERE email =:email");
 		$statement->execute(
 			[
 				'email' => $_POST['email']
@@ -14,7 +14,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 		$user = $statement->fetch();
 		if(!empty($user) && $user["password"] === $_POST["password"]){
-			$_SESSION['user'] = $user['name'];
 			$_SESSION['password'] = $user['password'];
 			$_SESSION['email'] = $user['email'];
 
@@ -38,7 +37,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 		die();
 	}
 }
-header('Location: /chooseProfile.php');
+header('Location: /chooseProfil.php');
 exit();
 
 /*
