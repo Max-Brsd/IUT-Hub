@@ -43,9 +43,10 @@
                 //var_dump($movieList);
 
                 foreach($movieList as $movie){
-                    echo '<a class="thumbnail" href="watch?movie='.$movie['title'].'" >
+                    echo '<div class="thumbnail">
                         <img class="thumbnail-image" alt="'.$movie['description'].'" src="https://picsum.photos/150/150?3">
-                    '.$movie['title'].'</a>';
+                        <a href="watch?movie='.$movie['title'].'">'.$movie['title'].'</a>
+                    </div>';
                 }
             } catch(PDOException $e){
                 echo $e->getMessage();
