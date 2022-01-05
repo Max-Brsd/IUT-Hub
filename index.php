@@ -1,5 +1,7 @@
+<?php require_once __DIR__ . "/includes/config.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
@@ -8,36 +10,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Main</title>
+    <title>IUT-Hub</title>
+
+    <link rel="icon" href="/img/logo_iuthub.png" type="image/x-icon">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
+
 <body>
-<header>
-    <img src="" alt=""> <!-- Les 4 points -->
-    <nav>
-        <a href="">Button 1</a>
-        <a href="">Button 2</a>
-        <a href="">Button 3</a>
-        <a href="">Button 4</a>
-    </nav>
-</header>
+
+
+<?php require "modules/header.php"; ?>
 <main>
-    <label for="search_bar">Search Bar</label>
-    <input type="text" id="search_bar" name="search_bar" >
+
+
+    <form class="search-bar" method="GET" action="query.php">
+        <input type="text" id="query" name="query" required>
+    </form>
 
     <div class="recommendation">
-    <img src="" alt=""> <!-- Film recommendation 1 -->
-    <a href="a"></a> <!-- Button visionage film-->
-    <img src="" alt=""> <!-- Film recommendation 2 -->
-    <a href=""></a> <!-- Button visionage film-->
-    <img src="" alt=""> <!-- Film recommendation 3 -->
-    <a href=""></a> <!-- Button visionage film-->
-    <img src="" alt=""> <!-- Film recommendation 4 -->
-    <a href=""></a> <!-- Button visionage film-->
+
+        <span id="recom1">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom1.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom2">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom2.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom3">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom3.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+
     </div>
 
-    <div class="account">
 
-    </div>
+    <p></p>
 </main>
+
 </body>
+
 </html>
