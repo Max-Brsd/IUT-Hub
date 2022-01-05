@@ -1,20 +1,7 @@
 <?php
-require_once __DIR__.'/../includes/config.php';
-function checkPost(){
-	if(!empty($_POST['prenom']) && 
-	!empty($_POST['nom']) && 
-	!empty($_POST['email']) && 
-	!empty($_POST['password']) && 
-	!empty($_POST['Vpassord'])
-	){
-		return true;
-	}
-	else {
-		return false;
-	}
-}
+session_start();
 
-if (checkPost()) {
+if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['Vpassword'])){
 	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		// not validated
 		echo "BOUM";
@@ -28,12 +15,14 @@ if (checkPost()) {
 				'email' => $_POST['email']
 			]
 		);
+		//var_dump($check);	
 		$user = $check->fetch();
-		var_dump($user);
+		//var_dump($user);
 		if($user){
+			echo "if user";
 			$_SESSION['alreadyExists'] = true;
-			header('Location: /inscription.php');
-			exit();
+			//header('Location: /inscription.php');
+			//exit();
 		}
 		else {
 			$data = [
@@ -59,15 +48,11 @@ if (checkPost()) {
 	}
 }
 else {
+	echo "else ";
 	$_SESSION['badForm'] = true;
-	header('Location: /inscription.php');
-	exit();
+	//header('Location: /inscription.php');
+	//exit();
 }
-header('Location: /index.php');
-exit();
-/*
-consectetuer@nislQuisquefringilla.com|XMB37JHA8WE
-lectus.pede.ultrices@sem.edu|WNR75WHJ3NC
-dapibus.rutrum.justo@aliquam.net|SDV07JPX8IF
-ut.lacus@feugiatplacerat.net|OEW99MPV2AR
-Duis@vitaediam.co.uk|QSL25CXR2BE */
+
+
+var_dump($_POST);
