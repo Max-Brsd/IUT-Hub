@@ -60,8 +60,62 @@ body {
 }
 
 
+/* Profile */
+
+.cardimg{
+    height : 100%;
+    width: 100%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+    display: block;
+    margin: auto;
+}
+
+.card{
+    text-align: center;
+    border: solid #000000;
+    display: block;
+    border-radius: 50px;
+    margin:5%;
+
+    width: 90%;
+    transition: 0.3s;
+}
+
+.colored{
+    background-color: #7670F0;
+}
+
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cardtext{
+    padding: 10px 16px;
+}
+
+.cardcolumn{
+    float: left;
+    width: 46%;
+    padding: 0 10px;
+    margin-bottom: 5%;
+
+    transition: 0.3s;
+}
+
+.reset{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
 /* Format Telephone*/
 @media (max-width: 480px) {
+
+    .cardcolumn{
+        width: 100%;
+    }
 
     nav {
         display: none;
@@ -512,46 +566,4 @@ body {
     color: white;
 }
 
-/* Profile */
-
-.cardimg{
-    height : 100%;
-    width: 100%;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 0px;
-    display: block;
-    margin: auto;
-}
-
-.card{
-    text-align: center;
-    border: solid #000000;
-    display: block;
-    border-radius: 50px;
-    margin:5%;
-}
-
-.colored{
-    background-color: #7670F0;
-}
-
-.card:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.cardtext{
-    padding: 10px 16px;
-}
-
-.cardcolumn{
-    float: left;
-    width: 100%;
-    padding: 10px;
-}
-
-.reset{
-    border-radius: 10px;
-    padding: 5px;
-}
 

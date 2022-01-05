@@ -21,32 +21,36 @@
 
         <?php require "modules/header.php"; ?>
         <main>
-            <div class="card">
-                <img class="cardimg" src="img/mateo.svg" alt="Profile picture">
-                <div class="cardtext">
-                    <div class="card colored">
-                        Sacré
+            <div class="cardcolumn" ><div class="card">
+                    <img class="cardimg" src="img/mateo.svg" alt="Profile picture">
+                    <div class="cardtext">
+                        <div class="card colored">
+                            Sacré
+                        </div>
+                        <div class="card colored">
+                            Matéo
+                        </div>
+                        <div class="card colored">
+                            sacre.mateoo@gmail.com
+                        </div>
+                        <button class="reset colored" >Réinitialiser le mot de passe</button>
                     </div>
-                    <div class="card colored">
-                        Matéo
-                    </div>
-                    <div class="card colored">
-                        sacre.mateoo@gmail.com
-                    </div>
-                    <button class="reset colored" >Réinitialiser le mot de passe</button>
                 </div>
             </div>
-            <div class="card">
-                <img class="cardimg" src="img/62780.png" alt="Profile picture">
-                <div class="cardtext">
-                    <div class="card colored">
-                        5161 6515 4894 4829
-                    </div>
-                    <div class="card colored">
-                        Matéo Sacré
-                    </div>
-                    <div class="card colored">
-                        91 chemin du paradis
+
+            <div class="cardcolumn">
+                <div class="card">
+                    <img class="cardimg" src="img/62780.png" alt="Profile picture">
+                    <div class="cardtext">
+                        <div class="card colored">
+                            5161 6515 4894 4829
+                        </div>
+                        <div class="card colored">
+                            Matéo Sacré
+                        </div>
+                        <div class="card colored">
+                            91 chemin du paradis
+                        </div>
                     </div>
                 </div>
             </div>
