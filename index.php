@@ -1,6 +1,7 @@
 <?php require_once __DIR__ . "/includes/config.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
@@ -16,143 +17,38 @@
 </head>
 
 <body>
+
+
 <?php require "modules/header.php"; ?>
 <main>
 
 
-    <form class="search-bar" method="GET" action="index.php">
+    <form class="search-bar" method="GET" action="query.php">
         <input type="text" id="query" name="query" required>
     </form>
 
-    <?php
-        if(isset($_GET['query']) && ! empty($_GET['query'])){
-            try {
-                $pdo = new PDO('sqlite:'.__DIR__.'/data/IUTHub.db');
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                
-                $statement = $pdo->prepare("SELECT * FROM movies WHERE title LIKE :query");
-                
-
-                $str = '%'.$_GET['query'].'%';
-                $statement->bindParam(':query', $str);
-                $statement->execute();
-
-                //var_dump($statement);
-                $movieList = $statement->fetchAll();
-                //var_dump($movieList);
-
-                foreach($movieList as $movie){
-                    echo '<div class="thumbnail">
-                        <img class="thumbnail-image" alt="'.$movie['description'].'" src="https://picsum.photos/150/150?3">
-                        <a href="watch?movie='.$movie['title'].'">'.$movie['title'].'</a>
-                    </div>';
-                }
-            } catch(PDOException $e){
-                echo $e->getMessage();
-            }
-        }
-    ?>
-
     <div class="recommendation">
-        <h2>Recommendation</h2>
-        <section class="carousel" aria-label="Gallery">
 
-            <ol class="carousel__viewport">
-                <li id="carousel__slide1"
-                    class="carousel__slide">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide4"
-                           class="carousel__prev">Go to last slide</a>
-                        <a href="#carousel__slide2"
-                           class="carousel__next">Go to next slide</a>
-                    </div>
-                </li>
-                <li id="carousel__slide2"
-                    class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide1"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide3"
-                       class="carousel__next">Go to next slide</a>
-                </li>
-                <li id="carousel__slide3"
-                    class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide2"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide4"
-                       class="carousel__next">Go to next slide</a>
-                </li>
-                <li id="carousel__slide4"
-                    class="carousel__slide">
-                    <div class="carousel__snapper"></div>
-                    <a href="#carousel__slide3"
-                       class="carousel__prev">Go to previous slide</a>
-                    <a href="#carousel__slide1"
-                       class="carousel__next">Go to first slide</a>
-                </li>
-            </ol>
-
-        </section>
-
-
-
-
-    </div>
-
-    <div class="top-chart">
-        <h2>Tendance</h2>
-
-        <section class="carrousel" aria-label="Gallery">
-
-            <ol class="carrousel__viewport">
-                <li id="carrousel__slide1"
-                    class="carrousel__slide">
-                    <div class="carrousel__snapper">
-                        <a href="#carrousel__slide4"
-                           class="carrousel__prev">Go to last slide</a>
-                        <a href="#carrousel__slide2"
-                           class="carrousel__next">Go to next slide</a>
-                    </div>
-                </li>
-                <li id="carrousel__slide2"
-                    class="carrousel__slide">
-                    <div class="carrousel__snapper"></div>
-                    <a href="#carrousel__slide1"
-                       class="carrousel__prev">Go to previous slide</a>
-                    <a href="#carrousel__slide3"
-                       class="carrousel__next">Go to next slide</a>
-                </li>
-                <li id="carrousel__slide3"
-                    class="carrousel__slide">
-                    <div class="carrousel__snapper"></div>
-                    <a href="#carrousel__slide2"
-                       class="carrousel__prev">Go to previous slide</a>
-                    <a href="#carrousel__slide4"
-                       class="carrousel__next">Go to next slide</a>
-                </li>
-                <li id="carrousel__slide4"
-                    class="carrousel__slide">
-                    <div class="carrousel__snapper"></div>
-                    <a href="#carrousel__slide3"
-                       class="carrousel__prev">Go to previous slide</a>
-                    <a href="#carrousel__slide1"
-                       class="carrousel__next">Go to first slide</a>
-                </li>
-            </ol>
-
-        </section>
-
-
-
+        <span id="recom1">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom1.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom2">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom2.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
+        <span id="recom3">
+            <i class='fas fa-chevron-circle-left' id="ileft" style='font-size:24px'></i>
+            <img src="img/recom3.jpg" alt="">
+            <i class='fas fa-chevron-circle-right' id="iright" style='font-size:24px'></i>
+        </span>
 
     </div>
 
 
-
-
-    <p class="bot"></p>
+    <p></p>
 </main>
 
 </body>

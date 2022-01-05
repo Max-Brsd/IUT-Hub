@@ -36,105 +36,11 @@
     }
 }
 
-@keyframes tonext {
-    75% {
-        left: 0;
-    }
-    95% {
-        left: 100%;
-    }
-    98% {
-        left: 100%;
-    }
-    99% {
-        left: 0;
-    }
-}
-
-@keyframes tostart {
-    75% {
-        left: 0;
-    }
-    95% {
-        left: -300%;
-    }
-    98% {
-        left: -300%;
-    }
-    99% {
-        left: 0;
-    }
-}
-
-@keyframes snap {
-    96% {
-        scroll-snap-align: center;
-    }
-    97% {
-        scroll-snap-align: none;
-    }
-    99% {
-        scroll-snap-align: none;
-    }
-    100% {
-        scroll-snap-align: center;
-    }
-}
-
-@keyframes tonext {
-    75% {
-        left: 0;
-    }
-    95% {
-        left: 100%;
-    }
-    98% {
-        left: 100%;
-    }
-    99% {
-        left: 0;
-    }
-}
-
-@keyframes tostart {
-    75% {
-        left: 0;
-    }
-    95% {
-        left: -300%;
-    }
-    98% {
-        left: -300%;
-    }
-    99% {
-        left: 0;
-    }
-}
-
-@keyframes snap {
-    96% {
-        scroll-snap-align: center;
-    }
-    97% {
-        scroll-snap-align: none;
-    }
-    99% {
-        scroll-snap-align: none;
-    }
-    100% {
-        scroll-snap-align: center;
-    }
-}
-
 
 * {
     padding: 0;
     margin: 0;
     font-family: 'Comfortaa', cursive;
-    overflow-anchor: none !important;
-    scroll-snap-stop: normal !important;
-    overscroll-behavior: unset !important;
-    scroll-behavior: unset !important;
 }
 
 
@@ -143,94 +49,90 @@ a {
     text-decoration: inherit;
 }
 
-.search-bar input {
-    z-index: 15;
-    width: 250px;
-    margin-top: 1%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 0.9em;
-    padding: 0.5em;
-    border: none;
+body {
+
+    background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
+    background-color: #C4C4C4;
+    background-size: 100%;
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
 
 }
 
-.thumbnail {
-    margin-left: auto;
-    margin-right: auto;
-    width: 10%;
+
+/* Profile */
+
+.cardimg{
+    height : 100%;
+    width: 100%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+    display: block;
+    margin: auto;
 }
 
+.card{
+    text-align: center;
+    border: solid #000000;
+    display: block;
+    border-radius: 50px;
+    margin:5%;
 
+    width: 90%;
+    transition: 0.3s;
+}
 
+.colored{
+    background-color: #7670F0;
+}
+
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cardtext{
+    padding: 10px 16px;
+}
+
+.cardcolumn{
+    float: left;
+    width: 46%;
+    padding: 0 10px;
+    margin-bottom: 5%;
+
+    transition: 0.3s;
+}
+
+.reset{
+    border-radius: 10px;
+    padding: 5px;
+}
 
 
 /* Format Telephone*/
-@media (max-width: 480px){
+@media (max-width: 480px) {
 
-    body{
-        background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
-        background-color: #C4C4C4;
-        background-size: 100%;
-        background-position: left top, right bottom;
-        background-repeat: no-repeat, no-repeat;
-
-
-    }
-
-    * {
-        box-sizing: border-box;
-        scrollbar-color: transparent transparent; /* thumb and track color */
-        scrollbar-width: 0px;
-        -ms-overflow-style: none;
-    }
-
-    *::-webkit-scrollbar {
-        width: 0;
-    }
-
-    *::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background: transparent;
-        border: none;
+    .cardcolumn{
+        width: 100%;
     }
 
     nav {
         display: none;
     }
 
-    .bot {
-        bottom: 0%;
-        margin-top: 200px;
-    }
-
 	/*LOGO de IUTHUB*/
 	span.logo {
 
-
-        margin: 15vw auto 5vw auto;
-
+        margin-top: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 86.5vw;
-        height: 38vw;
+        max-width: 100%;
+        height: 100%;
         z-index: 16;
-        border: solid #7670F0 3px;
-        border-radius: 8.5vw;
-
 
     }
-
-    .logo img{
-        width: 110vw;
-        margin-bottom: -1vw;
-    }
-
 
     .search-bar input {
         display: flex;
@@ -248,14 +150,6 @@ a {
 
         border-bottom: solid 1px #ccc;
         z-index: 9;
-
-    }
-
-    .search-bar-icon{
-        position: absolute;
-        top: 0;
-        z-index: 16;
-        background: url("../img/search-icon.svg") no-repeat scroll 0 0 transparent;
     }
 
 
@@ -295,26 +189,23 @@ a {
 
     }
 
-    @media (any-pointer: fine) {
-        .burger:not(:checked) ~ .logo-burger {
+
+    .burger:not(:checked) ~ .logo-burger {
 
 
-            -webkit-animation: unspin 0.5s linear;
-            -moz-animation: unspin 0.5s linear;
-            animation: unspin 0.5s linear;
+        -webkit-animation: unspin 0.5s linear;
+        -moz-animation: unspin 0.5s linear;
+        animation: unspin 0.5s linear;
 
 
-        }
     }
-
 
 	#menu
 	{
 		z-index: 14;
 		position: absolute;
-        font-size: 5vw;
-		width: 75vw;
-		height: 300vw;
+		width: 50vw;
+		height: 100%;
 		margin: -100px 0 0 -50px;
 		padding: 50px;
 		padding-top: 125px;
@@ -347,312 +238,52 @@ a {
         transform: none;
     }
 
-
-
-    .carousel ol,.carousel li {
-        list-style: none;
-        margin: auto;
-        padding: 0;
-        height: 77%;
-        width: 75%;
-    }
-
-    .carousel {
-        position: relative;
-        padding-top: 75%;
-        filter: drop-shadow(0 0 10px #0003);
-        perspective: 100px;
-    }
-
-    .carousel__viewport {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+    .recommendation span{
+        margin-top: 30px;
         display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
+        justify-content: center;
+        align-items: center;
+
     }
 
-    .carousel__slide {
+    .recommendation #ileft{
         position: relative;
-        flex: 0 0 100%;
-        width: 100%;
+        left: 10%;
     }
 
-    .carousel__slide:before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%,-40%,70px);
-        color: #fff;
-        font-size: 2em;
+    .recommendation #iright{
+        position: relative;
+        right: 10%;
     }
 
-    .carousel__snapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        scroll-snap-align: center;
-    }
+    .recommendation img{
 
-    @media (hover: hover) {
-        .carousel__snapper {
-            animation-name: tonext, snap;
-            animation-timing-function: ease;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-        }
-
-        .carousel__slide:last-child .carousel__snapper {
-            animation-name: tostart, snap;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .carousel__snapper {
-            animation-name: none;
-        }
-    }
-
-    .carousel:hover .carousel__snapper,
-    .carousel:focus-within .carousel__snapper {
-        animation-name: none;
-    }
-
-    .carousel::before,
-    .carousel::after,
-    .carousel__prev,
-    .carousel__next {
-        position: absolute;
-        top: 0;
-        margin-top: 28.5%;
-        width: 4rem;
-        height: 4rem;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        font-size: 0;
-        outline: 0;
-    }
-
-
-    .carousel::after,
-    .carousel__next {
-        right: -1rem;
-    }
-
-    .carousel::before,
-    .carousel::after {
-        width: 10vw;
-        height: 10vw;
-        content: '';
-        z-index: 1;
-        background-color: #7670F0;
-        background-size: 1rem 1rem;
-        background-repeat: no-repeat;
-        background-position: center center;
-        color: #fff;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        text-align: center;
-        pointer-events: none;
-    }
-
-    .carousel::before {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-left: 10vw;
-        top: 7vw;
-    }
-
-    .carousel::after {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-right: 15vw;
-        top: 7vw;
-    }
-
-    .carousel #carousel__slide1{
-        background-image: url("../img/recom1.jpg");
-        background-size: 100%;
-    }
-
-    .carousel #carousel__slide2{
-        background-image: url("../img/recom2.jpg");
-        background-size: 100%;
-    }
-
-    .carousel #carousel__slide3{
-        background-image: url("../img/recom3.jpg");
-        background-size: 100%;
-    }
-
-    .carousel #carousel__slide4{
-        background-image: url("../img/recom4.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel ol,.carrousel li {
-        list-style: none;
-        margin: auto;
-        padding: 0;
-        height: 77%;
         width: 75%;
+        border: solid 2px;
+        border-radius: 5px;
     }
 
-    .carrousel {
-        position: relative;
-        padding-top: 75%;
-        filter: drop-shadow(0 0 10px #0003);
-        perspective: 100px;
-    }
-
-    .carrousel__viewport {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+    .recommendation #recom1{
         display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
     }
 
-    .carrousel__slide {
-        position: relative;
-        flex: 0 0 100%;
-        width: 100%;
+    .recommendation #recom2{
+        display: flex;
     }
 
-    .carrousel__slide:before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%,-40%,70px);
-        color: #fff;
-        font-size: 2em;
+    .recommendation #recom3{
+        display: none;
     }
 
-    .carrousel__snapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        scroll-snap-align: center;
+    .recommendation #recom1:active{
+        display: none;
     }
 
-    @media (hover: hover) {
-        .carrousel__snapper {
-            animation-name: tonext, snap;
-            animation-timing-function: ease;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-        }
-
-        .carrousel__slide:last-child .carrousel__snapper {
-            animation-name: tostart, snap;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .carrousel__snapper {
-            animation-name: none;
-        }
-    }
-
-    .carrousel:hover .carrousel__snapper,
-    .carrousel:focus-within .carrousel__snapper {
-        animation-name: none;
-    }
-
-    .carrousel::before,
-    .carrousel::after,
-    .carrousel__prev,
-    .carrousel__next {
-        position: absolute;
-        top: 0;
-        margin-top: 28.5%;
-        width: 4rem;
-        height: 4rem;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        font-size: 0;
-        outline: 0;
-    }
-
-
-    .carrousel::after,
-    .carrousel__next {
-        right: -1rem;
-    }
-
-    .carrousel::before,
-    .carrousel::after {
-        width: 10vw;
-        height: 10vw;
-        content: '';
-        z-index: 1;
-        background-color: #7670F0;
-        background-size: 1rem 1rem;
-        background-repeat: no-repeat;
-        background-position: center center;
-        color: #fff;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        text-align: center;
-        pointer-events: none;
-    }
-
-    .carrousel::before {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-left: 10vw;
-        top: 7vw;
-    }
-
-    .carrousel::after {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-right: 15vw;
-        top: 7vw;
-    }
-
-    .carrousel #carrousel__slide1{
-        background-image: url("../img/top1.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel #carrousel__slide2{
-        background-image: url("../img/top2.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel #carrousel__slide3{
-        background-image: url("../img/top3.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel #carrousel__slide4{
-        background-image: url("../img/top4.jpg");
-        background-size: 100%;
-    }
-
-    .recommendation{
-        padding: -10vw;
-    }
-
-    .recommendation h2{
-        padding-top: 20vw;
-    }
-
-    h2{
-        text-align: center;
+    .recommendation #recom1:active{
+        display: none;
     }
 
     /*check carrousel*/
-
 
 
 }
@@ -660,418 +291,16 @@ a {
 /*Format autre*/
 @media (min-width: 481px) {
 
-    body{
-        background-image: url("../img/part-2.svg"), url("../img/part-1.svg");
-        background-color: #C4C4C4;
-        background-size: 50%;
-        background-position: left top, right bottom;
-        background-repeat: no-repeat, no-repeat;
-
-
-    }
-
-    * {
-        box-sizing: border-box;
-        scrollbar-color: transparent transparent; /* thumb and track color */
-        scrollbar-width: 0px;
-        -ms-overflow-style: none;
-    }
-
-    *::-webkit-scrollbar {
-        width: 0;
-    }
-
-    *::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background: transparent;
-        border: none;
-    }
-
     span.logo {
-
-
-        margin: 5vw auto 1vw auto;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50vw;
-        height: 22vw;
-        z-index: 16;
-        border: solid #7670F0 3px;
-        border-radius: 5vw;
-
-
-    }
-
-    .logo img{
-        width: 50vw;
-        margin-bottom: -0.7vw;
-    }
-
-
-
-    .search-bar input {
-        display: flex;
-        margin: 10vw auto 0 auto;
-
-
-        width: 45vw;
-        height: 7vw;
-
-        border: 1px solid #7670F0;
-        border-radius: 3px;
-        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-        font-size: 0.9em;
-        padding: 0.5em;
-        border: none;
-
-
-        border-bottom: solid 1px #ccc;
-        z-index: 9;
-    }
-
-
-    .search-bar input:focus {
-        transition: all 0.1s cubic-bezier(.17, .67, .34, .92);
-        outline: none;
-        border-bottom: solid 0.5vw #7670F0;
-    }
-
-    .burger, #menu, .logo-burger {
         display: none;
     }
 
-    #menu{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+    .search-bar img {
+        display: none;
     }
 
-
-
-    #menu ul li{
-        list-style: none;
-    }
-
-    #menu a{
-
-        margin: 1vw 2vw 0 2vw;
-
-    }
-
-    .carousel ol,.carousel li {
-        list-style: none;
-        margin: auto;
-        padding: 0;
-        max-width: 60vw;
-        max-height: 45vw;
-        height: 75%;
-        width: 75%;
-    }
-
-    .carousel {
-        position: relative;
-        padding-top: 75%;
-        filter: drop-shadow(0 0 10px #0003);
-        perspective: 100px;
-    }
-
-    .carousel__viewport {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-    }
-
-    .carousel__slide {
-        position: relative;
-        flex: 0 0 100%;
-        width: 100%;
-    }
-
-    .carousel__slide:before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%,-40%,70px);
-        color: #fff;
-        font-size: 2em;
-    }
-
-    .carousel__snapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        scroll-snap-align: center;
-    }
-
-    @media (hover: hover) {
-        .carousel__snapper {
-            animation-name: tonext, snap;
-            animation-timing-function: ease;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-        }
-
-        .carousel__slide:last-child .carousel__snapper {
-            animation-name: tostart, snap;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .carousel__snapper {
-            animation-name: none;
-        }
-    }
-
-    .carousel:hover .carousel__snapper,
-    .carousel:focus-within .carousel__snapper {
-        animation-name: none;
-    }
-
-    .carousel::before,
-    .carousel::after,
-    .carousel__prev,
-    .carousel__next {
-        position: absolute;
-        top: 0;
-        margin-top: 28.5%;
-        width: 4rem;
-        height: 4rem;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        font-size: 0;
-        outline: 0;
-    }
-
-
-    .carousel::after,
-    .carousel__next {
-        right: -1rem;
-    }
-
-    .carousel::before,
-    .carousel::after {
-        width: 5vw;
-        height: 5vw;
-        content: '';
-        z-index: 1;
-        background-color: #7670F0;
-        background-size: 1rem 1rem;
-        background-repeat: no-repeat;
-        background-position: center center;
-        color: #fff;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        text-align: center;
-        pointer-events: none;
-    }
-
-    .carousel::before {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-left:18vw;
-        top: 8vw;
-    }
-
-    .carousel::after {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-right: 20vw;
-        top: 8vw;
-    }
-
-    .carousel #carousel__slide1{
-        background-image: url("../img/recom1.jpg");
-        background-size: 100%;
-    }
-
-    .carousel #carousel__slide2{
-        background-image: url("../img/recom2.jpg");
-        background-size: 100%;
-    }
-
-    .carousel #carousel__slide3{
-        background-image: url("../img/recom3.jpg");
-        background-size: 100%;
-    }
-
-    .carousel #carousel__slide4{
-        background-image: url("../img/recom4.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel ol,.carrousel li {
-        list-style: none;
-        margin: auto;
-        padding: 0;
-        max-width: 60vw;
-        max-height: 45vw;
-        height: 75%;
-        width: 75%;
-    }
-
-    .carrousel {
-        position: relative;
-        padding-top: 75%;
-        filter: drop-shadow(0 0 10px #0003);
-        perspective: 100px;
-    }
-
-    .carrousel__viewport {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-    }
-
-    .carrousel__slide {
-        position: relative;
-        flex: 0 0 100%;
-        width: 100%;
-    }
-
-    .carrousel__slide:before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%,-40%,70px);
-        color: #fff;
-        font-size: 2em;
-    }
-
-    .carrousel__snapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        scroll-snap-align: center;
-    }
-
-    @media (hover: hover) {
-        .carrousel__snapper {
-            animation-name: tonext, snap;
-            animation-timing-function: ease;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-        }
-
-        .carrousel__slide:last-child .carrousel__snapper {
-            animation-name: tostart, snap;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .carrousel__snapper {
-            animation-name: none;
-        }
-    }
-
-    .carrousel:hover .carrousel__snapper,
-    .carrousel:focus-within .carrousel__snapper {
-        animation-name: none;
-    }
-
-    .carrousel::before,
-    .carrousel::after,
-    .carrousel__prev,
-    .carrousel__next {
-        position: absolute;
-        top: 0;
-        margin-top: 28.5%;
-        width: 4rem;
-        height: 4rem;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        font-size: 0;
-        outline: 0;
-    }
-
-
-    .carrousel::after,
-    .carrousel__next {
-        right: -1rem;
-    }
-
-    .carrousel::before,
-    .carrousel::after {
-        width: 5vw;
-        height: 5vw;
-        content: '';
-        z-index: 1;
-        background-color: #7670F0;
-        background-size: 1rem 1rem;
-        background-repeat: no-repeat;
-        background-position: center center;
-        color: #fff;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        text-align: center;
-        pointer-events: none;
-    }
-
-    .carrousel::before {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-left:18vw;
-        top: 8vw;
-    }
-
-    .carrousel::after {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-        margin-right: 20vw;
-        top: 8vw;
-    }
-
-    .carrousel #carrousel__slide1{
-        background-image: url("../img/top1.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel #carrousel__slide2{
-        background-image: url("../img/top2.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel #carrousel__slide3{
-        background-image: url("../img/top3.jpg");
-        background-size: 100%;
-    }
-
-    .carrousel #carrousel__slide4{
-        background-image: url("../img/top4.jpg");
-        background-size: 100%;
-    }
-
-    .recommendation h2{
-        padding-top: 20vw;
-
-
-    }
-
-    .top-chart{
-        
-    }
-
-    h2{
-        text-align: center;
-        margin-bottom: -20vw;
-        font-size: 50px;
+    .burger {
+        display: none;
     }
 }
 
@@ -1083,14 +312,10 @@ a {
 /*║                                                         ║*/
 /*╚═════════════════════════════════════════════════════════╝*/
 
-.chooseProfile{
-    overflow-y: hidden;
-    background: #C4C4C4;
-}
 
 
-.chooseProfile #imgBackgroundP1 {
-    position: absolute;
+#imgBackgroundP1 {
+    display: flex;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -1098,29 +323,20 @@ a {
 
 }
 
-.chooseProfile #imgBackgroundP2 {
-    position: absolute;
+#imgBackgroundP2 {
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
+
 }
 
 .chooseProfile #logoIUT {
-    position: fixed;
+    position: absolute;
     width: 20vw;
-    top:0.5vw;
-    left:1vw;
-    z-index: 1;
-}
-
-.chooseProfile #retourHome{
-    position: fixed;
-    width: 20vw;
-    height: 10vw;
-    top: 0.5vw;
-    left: 1vw;
-    z-index: 2;
+    top:0.5%;
+    left:1%;
 }
 
 .chooseProfile #titleWho{
@@ -1172,15 +388,6 @@ a {
 .chooseProfile #modifyButton:checked ~#finishButton{
     display: block;
 
-}
-
-.chooseProfile .container .LoïcPicture{
-    position: absolute;
-    width: 21vw;
-    height: 28vw;
-    top: 30%;
-    left: 27%;
-    padding: 2%;
 }
 
 .chooseProfile .container .LoïcPicture #loïcPP{
@@ -1288,7 +495,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 34%;
+    top: 31%;
     left: 29%;
     display: flex;
     justify-content: center;
@@ -1303,7 +510,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 34%;
+    top: 31%;
     left: 54%;
     display: flex;
     justify-content: center;
@@ -1318,7 +525,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 51.5%;
+    top: 48.5%;
     left: 29%;
     display: flex;
     justify-content: center;
@@ -1333,7 +540,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 51.5%;
+    top: 48.5%;
     left: 54%;
     display: flex;
     justify-content: center;
@@ -1348,7 +555,7 @@ a {
     position: absolute;
     width: 21vw;
     height: 21vw;
-    top: 69%;
+    top: 66%;
     left: 42%;
     display: flex;
     justify-content: center;
@@ -1359,1002 +566,4 @@ a {
     color: white;
 }
 
-.chooseProfile .modify-overlay{
-    display: none;
-}
 
-.chooseProfile #modifyButton:checked ~.modify-overlay{
-    display: block;
-}
-
-.chooseProfile #modifyButton:checked ~.container .LoïcPicture #loïcPP{
-    -webkit-filter: grayscale(60%);
-    filter: grayscale(60%);
-}
-
-.chooseProfile #modifyButton:checked ~.container .KurtPicture #kurtPP{
-    -webkit-filter: grayscale(60%);
-    filter: grayscale(60%);
-}
-
-.chooseProfile #modifyButton:checked ~.container .MateoPicture #mateoPP{
-    -webkit-filter: grayscale(60%);
-    filter: grayscale(60%);
-}
-
-.chooseProfile #modifyButton:checked ~.container .KevinPicture #kevinPP{
-    -webkit-filter: grayscale(60%);
-    filter: grayscale(60%);
-}
-
-.chooseProfile #modifyButton:checked ~.container .MaximePicture #maximePP{
-    -webkit-filter: grayscale(60%);
-    filter: grayscale(60%);
-}
-
-/*╔═════════════════════════════════════════════════════════╗*/
-/*║                                                         ║*/
-/*║                 CSS Page chooseProfile                  ║*/
-/*║                       Desktop CSS                       ║*/
-/*║                                                         ║*/
-/*╚═════════════════════════════════════════════════════════╝*/
-
-@media (min-width: 560px) {
-    .chooseProfile #imgBackgroundP1 {
-        position: absolute;
-        width: 50vw;
-        height: auto;
-        bottom: 0;
-        right: 0;
-
-    }
-
-    .chooseProfile #imgBackgroundP2 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50vw;
-        height: auto;
-    }
-
-    .chooseProfile #logoIUT{
-        width: 10vw;
-    }
-
-    .chooseProfile #retourHome{
-        position: absolute;
-        width: 10vw;
-        height: 5vw;
-        z-index: 2;
-    }
-
-    .chooseProfile #titleWho{
-        font-size: 4vw;
-    }
-
-    .chooseProfile #modifyText{
-        font-size: 1.5vw;
-    }
-
-    .chooseProfile #finishButton{
-        font-size: 1.5vw
-    }
-
-    .chooseProfile #modifyButton{
-        position: absolute;
-        top: -3vw;
-        right: 1vw;
-        width: 6.5vw;
-        height: 6.5vw;
-        opacity: 0;
-    }
-
-    .chooseProfile > .container{
-        display: inline-block;
-        width: 80vw;
-        height: 15vw;
-    }
-
-    .chooseProfile .container .LoïcPicture {
-        align-items: center;
-        width: 10.5vw;
-        height: 17vw;
-        top: 15vw;
-        left: 10vw;
-        padding: 2%;
-    }
-
-    .chooseProfile .container .LoïcPicture #loïcPP{
-        width: 10vw;
-        background: #7670F0;
-        border: solid 2px;
-        border-radius: 5px;
-    }
-
-    .chooseProfile .container .LoïcPicture #loïcPP-label{
-        width: 10.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .chooseProfile .container .KurtPicture {
-        align-items: center;
-        width: 10.5vw;
-        height: 17vw;
-        top: 15vw;
-        left: 27vw;
-        padding: 2%;
-    }
-
-    .chooseProfile .container .KurtPicture #kurtPP{
-        width: 10vw;
-        background: #7670F0;
-        border: solid 2px;
-        border-radius: 5px;
-    }
-
-    .chooseProfile .container .KurtPicture #kurtPP-label{
-        width: 10.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .chooseProfile .container .MateoPicture {
-        align-items: center;
-        width: 10.5vw;
-        height: 17vw;
-        top: 15vw;
-        left: 44vw;
-        padding: 2%;
-    }
-
-    .chooseProfile .container .MateoPicture #mateoPP{
-        width: 10vw;
-        background: #7670F0;
-        border: solid 2px;
-        border-radius: 5px;
-    }
-
-    .chooseProfile .container .MateoPicture #mateoPP-label{
-        width: 10.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .chooseProfile .container .KevinPicture {
-        align-items: center;
-        width: 10.5vw;
-        height: 17vw;
-        top: 15vw;
-        left: 61vw;
-        padding: 2%;
-    }
-
-    .chooseProfile .container .KevinPicture #kevinPP{
-        width: 10vw;
-        background: #7670F0;
-        border: solid 2px;
-        border-radius: 5px;
-    }
-
-    .chooseProfile .container .KevinPicture #kevinPP-label{
-        width: 10.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .chooseProfile .container .MaximePicture {
-        align-items: center;
-        width: 10.5vw;
-        height: 17vw;
-        top: 15vw;
-        left: 78vw;
-        padding: 2%;
-    }
-
-    .chooseProfile .container .MaximePicture #maximePP{
-        width: 10vw;
-        background: #7670F0;
-        border: solid 2px;
-        border-radius: 5px;
-    }
-
-    .chooseProfile .container .MaximePicture #maximePP-label{
-        width: 10.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .chooseProfile .modify-overlay .modify-Loïc{
-        position: absolute;
-        width: 7vw;
-        height: 7vw;
-        top: 19vw;
-        left: 14vw;
-        display: flex;
-        justify-content: center;
-    }
-
-    .chooseProfile .modify-overlay .modify-Loïc a #modifyL{
-        width: 7vw;
-        color: white;
-    }
-
-    .chooseProfile .modify-overlay .modify-Kurt{
-        position: absolute;
-        width: 7vw;
-        height: 7vw;
-        top: 19vw;
-        left: 31vw;
-        display: flex;
-        justify-content: center;
-    }
-
-    .chooseProfile .modify-overlay .modify-Kurt a #modifyKu{
-        width: 7vw;
-        color: white;
-    }
-
-    .chooseProfile .modify-overlay .modify-Mateo{
-        position: absolute;
-        width: 7vw;
-        height: 7vw;
-        top: 19vw;
-        left: 48vw;
-        display: flex;
-        justify-content: center;
-    }
-
-    .chooseProfile .modify-overlay .modify-Mateo a #modifyMat{
-        width: 7vw;
-        color: white;
-    }
-
-    .chooseProfile .modify-overlay .modify-Kevin{
-        position: absolute;
-        width: 7vw;
-        height: 7vw;
-        top: 19vw;
-        left: 65vw;
-        display: flex;
-        justify-content: center;
-    }
-
-    .chooseProfile .modify-overlay .modify-Kevin a #modifyKe{
-        width: 7vw;
-        color: white;
-    }
-
-    .chooseProfile .modify-overlay .modify-Maxime{
-        position: absolute;
-        width: 7vw;
-        height: 7vw;
-        top: 19vw;
-        left: 82vw;
-        display: flex;
-        justify-content: center;
-    }
-
-    .chooseProfile .modify-overlay .modify-Maxime a #modifyMax{
-        width: 7vw;
-        color: white;
-    }
-}
-
-/*╔═════════════════════════════════════════════════════════╗*/
-/*║                                                         ║*/
-/*║                   CSS Page Connexion                    ║*/
-/*║                       Mobile CSS                        ║*/
-/*║                                                         ║*/
-/*╚═════════════════════════════════════════════════════════╝*/
-
-.login{
-    overflow: hidden;
-    background: #C4C4C4;
-}
-
-.login #logo-acceuil{
-    width: 60vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.login #part1{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-
-.login #part2{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.login #iphone{
-    display: none;
-}
-
-.login .email-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 70vw;
-}
-
-.login .email-div #email{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 60%;
-    height: 60%;
-    border: solid black 1px;
-    border-radius: 5px;
-    font-size: 1.5vw;
-}
-
-.login .email-div #label-email{
-    position: absolute;
-    font-size: 4vw;
-    top: 1vw;
-    left: 21vw;
-}
-
-.login .email-div #email:focus + #label-email ,
-.login .email-div #email:valid + #label-email{
-    top: -5vw;
-    font-size: 4vw;
-    transition: ease 0.3s;
-}
-
-.login .password-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 85vw;
-}
-
-.login .password-div #password{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 60%;
-    height: 60%;
-    border: solid black 1px;
-    border-radius: 5px;
-    font-size: 1.5vw;
-}
-
-.login .password-div #label-password{
-    position: absolute;
-    font-size: 4vw;
-    top: 1vw;
-    left: 21vw;
-}
-
-.login .password-div #password:focus + #label-password ,
-.login .password-div #password:valid + #label-password{
-    top: -5vw;
-    font-size: 4vw;
-    transition: ease 0.3s;
-}
-
-.login .span-div{
-    position: absolute;
-    width: 100%;
-    height: 1vw;
-    top: 95vw;
-}
-
-.login .span-div #barre{
-    display:block;
-    width:100px;
-    height: 100%;
-    margin: 0 auto;
-    height: 0;
-    width: 85%;
-    border: solid black 1px;
-}
-
-.login .button-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 100vw;
-}
-
-.login .button-div #valide{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 35%;
-    height: 70%;
-    font-size: 5vw;
-    color: white;
-    border: solid black 1px;
-    background: black;
-    border-radius: 10px;
-}
-
-/*╔═════════════════════════════════════════════════════════╗*/
-/*║                                                         ║*/
-/*║                   CSS Page Connexion                    ║*/
-/*║                       Desktop CSS                       ║*/
-/*║                                                         ║*/
-/*╚═════════════════════════════════════════════════════════╝*/
-
-@media (min-width: 560px) {
-    .login #logo-acceuil{
-        width: 15vw;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .login #iphone{
-        display: block;
-        position: absolute;
-        width: 18vw;
-        top: 10vw;
-        left: 20vw;
-    }
-
-    .login #part1{
-        width: 50vw;
-    }
-    .login #part2{
-        width: 50vw;
-    }
-
-    .login .email-div{
-        position: absolute;
-        width: 50%;
-        height: 5vw;
-        top: 15vw;
-        left: 35vw;
-    }
-
-    .login .email-div #email{
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        width: 60%;
-        height: 60%;
-        border: solid black 1px;
-        border-radius: 10px;
-    }
-
-    .login .email-div #label-email{
-        position: absolute;
-        font-size: 2.5vw;
-        top: 0.3vw;
-        left: 10vw;
-    }
-
-    .login .email-div #email:focus + #label-email ,
-    .login .email-div #email:valid + #label-email{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .login .password-div{
-        position: absolute;
-        width: 50%;
-        height: 5vw;
-        top: 22vw;
-        left: 35vw;
-    }
-
-    .login .password-div #password{
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        width: 60%;
-        height: 60%;
-        border: solid black 1px;
-        border-radius: 5px;
-    }
-
-    .login .password-div #label-password{
-        position: absolute;
-        font-size: 2.5vw;
-        top: 0.3vw;
-        left: 10vw;
-    }
-
-    .login .password-div #password:focus + #label-password ,
-    .login .password-div #password:valid + #label-password{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .login .span-div{
-        position: absolute;
-        width: 50%;
-        height: 1vw;
-        top: 28vw;
-        left: 35vw;
-    }
-
-    .login .span-div #barre{
-        display:block;
-        width:100px;
-        height: 100%;
-        margin: 0 auto;
-        height: 0;
-        width: 85%;
-        border: solid black 3px;
-    }
-
-    .login .button-div{
-        position: absolute;
-        width: 40%;
-        height: 5vw;
-        top: 31vw;
-        left: 39.5vw;
-    }
-
-    .login .button-div #valide{
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        width: 35%;
-        height: 70%;
-        font-size: 3vw;
-        color: white;
-        border: solid black 1px;
-        background: black;
-        border-radius: 10px;
-    }
-}
-
-/*╔═════════════════════════════════════════════════════════╗*/
-/*║                                                         ║*/
-/*║                  CSS Page Inscription                   ║*/
-/*║                       Mobile CSS                        ║*/
-/*║                                                         ║*/
-/*╚═════════════════════════════════════════════════════════╝*/
-
-.inscription{
-    overflow: hidden;
-    background: #C4C4C4;
-}
-
-.inscription #logo-acceuil{
-    width: 60vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.inscription #part1{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-
-.inscription #part2{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.inscription #iphone{
-    display: none;
-}
-
-.inscription .prenom-div{
-    position: absolute;
-    width: 40%;
-    top: 70vw;
-    left: 6vw;
-}
-
-.inscription .prenom-div #prenom{
-    width: 100%;
-    height: 7vw;
-    border: solid black 1px;
-    border-radius: 5px;
-}
-
-.inscription .prenom-div #label-prenom{
-    position: absolute;
-    top: 1vw;
-    left: 0.5vw;
-    font-size: 5vw;
-}
-
-.inscription .prenom-div #prenom:focus + #label-prenom ,
-.inscription .prenom-div #prenom:valid + #label-prenom{
-    top: -5.5vw;
-    font-size: 5vw;
-    transition: ease 0.3s;
-}
-
-.inscription .nom-div{
-    position: absolute;
-    width: 40%;
-    top: 70vw;
-    right: 6vw;
-}
-
-.inscription .nom-div #nom{
-    width: 100%;
-    height: 7vw;
-    border: solid black 1px;
-    border-radius: 5px;
-}
-
-.inscription .nom-div #label-nom{
-    position: absolute;
-    top: 1vw;
-    left: 0.5vw;
-    font-size: 5vw;
-}
-
-.inscription .nom-div #nom:focus + #label-nom ,
-.inscription .nom-div #nom:valid + #label-nom{
-    top: -5.5vw;
-    font-size: 5vw;
-    transition: ease 0.3s;
-}
-
-.inscription .email-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 85vw;
-}
-
-.inscription .email-div #email{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 88%;
-    height: 7vw;
-    border: solid black 1px;
-    border-radius: 5px;
-}
-
-.inscription .email-div #label-email{
-    position: absolute;
-    font-size: 5vw;
-    top: 1vw;
-    left: 7vw;
-}
-
-.inscription .email-div #email:focus + #label-email ,
-.inscription .email-div #email:valid + #label-email{
-    top: -5.5vw;
-    font-size: 5vw;
-    transition: ease 0.3s;
-}
-
-.inscription .password-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 100vw;
-}
-
-.inscription .password-div #password{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 88%;
-    height: 7vw;
-    border: solid black 1px;
-    border-radius: 5px;
-}
-
-.inscription .password-div #label-password{
-    position: absolute;
-    font-size: 5vw;
-    top: 1vw;
-    left: 7vw;
-}
-
-.inscription .password-div #password:focus + #label-password ,
-.inscription .password-div #password:valid + #label-password{
-    top: -5.5vw;
-    font-size: 5vw;
-    transition: ease 0.3s;
-}
-
-.inscription .Vpassword-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 115vw;
-}
-
-.inscription .Vpassword-div #Vpassword{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 88%;
-    height: 7vw;
-    border: solid black 1px;
-    border-radius: 5px;
-}
-
-.inscription .Vpassword-div #label-Vpassword{
-    position: absolute;
-    font-size: 5vw;
-    top: 1vw;
-    left: 7vw;
-}
-
-.inscription .Vpassword-div #Vpassword:focus + #label-Vpassword ,
-.inscription .Vpassword-div #Vpassword:valid + #label-Vpassword{
-    top: -5.5vw;
-    font-size: 5vw;
-    transition: ease 0.3s;
-}
-
-.inscription .span-div{
-    position: absolute;
-    width: 100%;
-    height: 1vw;
-    top: 130vw;
-}
-
-.inscription .span-div #barre{
-    display:block;
-    height: 100%;
-    margin: 0 auto;
-    height: 0;
-    width: 95%;
-    border: solid black 1px;
-}
-
-.inscription .button-div{
-    position: absolute;
-    width: 100%;
-    height: 10vw;
-    top: 140vw;
-}
-
-.inscription .button-div #valide{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 35%;
-    height: 70%;
-    font-size: 5vw;
-    color: white;
-    border: solid black 1px;
-    background: black;
-    border-radius: 10px;
-}
-
-/*╔═════════════════════════════════════════════════════════╗*/
-/*║                                                         ║*/
-/*║                   CSS Page Connexion                    ║*/
-/*║                       Desktop CSS                       ║*/
-/*║                                                         ║*/
-/*╚═════════════════════════════════════════════════════════╝*/
-
-@media (min-width: 560px) {
-    .inscription #logo-acceuil{
-        width: 15vw;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .inscription #iphone{
-        display: block;
-        position: absolute;
-        width: 18vw;
-        top: 10vw;
-        left: 20vw;
-    }
-
-    .inscription #part1{
-        width: 50vw;
-    }
-    .inscription #part2{
-        width: 50vw;
-    }
-
-    .inscription .prenom-div{
-        position: absolute;
-        width: 15%;
-        top: 13vw;
-        left: 43vw;
-    }
-
-    .inscription .prenom-div #prenom{
-        width: 100%;
-        height: 3vw;
-        border: solid black 1px;
-        border-radius: 10px;
-        font-size: 1.5vw;
-    }
-
-    .inscription .prenom-div #label-prenom{
-        position: absolute;
-        top: 0.3vw;
-        left: 0.5vw;
-        font-size: 2.5vw;
-    }
-
-    .inscription .prenom-div #prenom:focus + #label-prenom ,
-    .inscription .prenom-div #prenom:valid + #label-prenom{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .inscription .nom-div{
-        position: absolute;
-        width: 15%;
-        top: 13vw;
-        left: 63vw;
-    }
-
-    .inscription .nom-div #nom{
-        width: 100%;
-        height: 3vw;
-        border: solid black 1px;
-        border-radius: 10px;
-        font-size: 1.5vw;
-    }
-
-    .inscription .nom-div #label-nom{
-        position: absolute;
-        top: 0.3vw;
-        left: 0.5vw;
-        font-size: 2.5vw;
-    }
-
-    .inscription .nom-div #nom:focus + #label-nom ,
-    .inscription .nom-div #nom:valid + #label-nom{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .inscription .email-div{
-        position: absolute;
-        width: 35%;
-        top: 19vw;
-        left: 43vw;
-    }
-
-    .inscription .email-div #email{
-        width: 100%;
-        height: 3vw;
-        border: solid black 1px;
-        border-radius: 10px;
-        font-size: 1.5vw;
-    }
-
-    .inscription .email-div #label-email{
-        position: absolute;
-        top: 0.3vw;
-        left: 0.5vw;
-        font-size: 2.5vw;
-    }
-
-    .inscription .email-div #email:focus + #label-email ,
-    .inscription .email-div #email:valid + #label-email{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .inscription .password-div{
-        position: absolute;
-        width: 35%;
-        top: 25vw;
-        left: 43vw;
-    }
-
-    .inscription .password-div #password{
-        width: 100%;
-        height: 3vw;
-        border: solid black 1px;
-        border-radius: 10px;
-        font-size: 1.5vw;
-    }
-
-    .inscription .password-div #label-password{
-        position: absolute;
-        top: 0.3vw;
-        left: 0.5vw;
-        font-size: 2.5vw;
-    }
-
-    .inscription .password-div #password:focus + #label-password ,
-    .inscription .password-div #password:valid + #label-password{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .inscription .Vpassword-div{
-        position: absolute;
-        width: 35%;
-        top: 31vw;
-        left: 43vw;
-    }
-
-    .inscription .Vpassword-div #Vpassword{
-        width: 100%;
-        height: 3vw;
-        border: solid black 1px;
-        border-radius: 10px;
-        font-size: 1.5vw;
-    }
-
-    .inscription .Vpassword-div #label-Vpassword{
-        position: absolute;
-        top: 0.3vw;
-        left: 0.5vw;
-        font-size: 2.5vw;
-    }
-
-    .inscription .Vpassword-div #Vpassword:focus + #label-Vpassword ,
-    .inscription .Vpassword-div #Vpassword:valid + #label-Vpassword{
-        top: -2.5vw;
-        font-size: 2.5vw;
-        transition: ease 0.3s;
-    }
-
-    .inscription .span-div{
-        position: absolute;
-        width: 50%;
-        height: 1vw;
-        top: 36vw;
-        left: 35vw;
-    }
-
-    .inscription .span-div #barre{
-        display:block;
-        width:100px;
-        height: 100%;
-        margin: 0 auto;
-        height: 0;
-        width: 85%;
-        background: black;
-        border: solid black 3px;
-    }
-
-    .inscription .button-div{
-        position: absolute;
-        width: 40%;
-        height: 5vw;
-        top: 40vw;
-        left: 39.5vw;
-    }
-
-    .inscription .button-div #valide{
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        width: 35%;
-        height: 70%;
-        font-size: 3vw;
-        color: white;
-        border: solid black 1px;
-        background: black;
-        border-radius: 10px;
-    }
-}
