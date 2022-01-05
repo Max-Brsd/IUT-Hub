@@ -18,13 +18,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 			$_SESSION['password'] = $user['password'];
 			$_SESSION['email'] = $user['email'];
 
-			if($_SESSION['email'] === 'lo.perrian@gmail.com' && $_SESSION['password'] === 'admin'){
-				$_SESSION['admin'] = true;
-			}
-			else {
-				$_SESSION['admin'] = false;
-			}
-
 			$userInfo = array($_SESSION['user'], $_SESSION['password']);
 			setcookie('user', json_encode($userInfo), time() + 86400, '/');
 		}
