@@ -38,7 +38,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 		die();
 	}
 }
-header('Location: /index.php');
+header('Location: /chooseProfile.php');
 exit();
 
 /*

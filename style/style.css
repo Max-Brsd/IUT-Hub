@@ -1697,6 +1697,7 @@ a {
     height: 60%;
     border: solid black 1px;
     border-radius: 5px;
+    font-size: 1.5vw;
 }
 
 .login .email-div #label-email{
@@ -1728,6 +1729,7 @@ a {
     height: 60%;
     border: solid black 1px;
     border-radius: 5px;
+    font-size: 1.5vw;
 }
 
 .login .password-div #label-password{
