@@ -7,7 +7,7 @@ if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) 
 		echo "BOUM";
 	}
 	try {
-		$pdo = new PDO('sqlite:'.__DIR__.'/../database.db');
+		$pdo = new PDO('sqlite:'.__DIR__.'/../data/IUTHub.db');
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$check = $pdo->prepare("SELECT * FROM account where email=:email");
 		$check->execute(
@@ -15,9 +15,9 @@ if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) 
 				'email' => $_POST['email']
 			]
 		);
-		//var_dump($check);	
+		//var_dump($check);
 		$user = $check->fetch();
-		//var_dump($user);
+		var_dump($user);
 		if($user){
 			echo "if user";
 			$_SESSION['alreadyExists'] = true;
@@ -33,6 +33,7 @@ if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) 
 			];
 			$s = $pdo->prepare("INSERT INTO users (name, lastname) VALUES (:prenom, :nom)");
 			$s->execute($data);
+            //var_dump($s);
 			$g = $pdo->prepare("SELECT idUser FROM users WHERE name=:prenom AND lastname=:nom");
 			$g->execute($data);
 			$myID = $g->fetch();
@@ -53,6 +54,5 @@ else {
 	//header('Location: /inscription.php');
 	//exit();
 }
-
 
 var_dump($_POST);
