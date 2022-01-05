@@ -17,7 +17,7 @@ if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) 
 		);
 		//var_dump($check);
 		$user = $check->fetch();
-		var_dump($user);
+		//var_dump($user);
 		if($user){
 			echo "if user";
 			$_SESSION['alreadyExists'] = true;
@@ -25,23 +25,29 @@ if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) 
 			//exit();
 		}
 		else {
-			$data = [
-				'email' => strip_tags($_POST['email']),
-				'prenom' => strip_tags($_POST['prenom']),
-				'nom' =>strip_tags($_POST['nom']),
-				'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)
-			];
-			$s = $pdo->prepare("INSERT INTO users (name, lastname) VALUES (:prenom, :nom)");
-			$s->execute($data);
-            //var_dump($s);
-			$g = $pdo->prepare("SELECT idUser FROM users WHERE name=:prenom AND lastname=:nom");
-			$g->execute($data);
-			$myID = $g->fetch();
-			$statement = $pdo->prepare("INSERT INTO account (email, password, idUser1) VALUES (:email, :password, :myID)");
-			$data['myID'] = $myID;
-			$statement->execute($data);
-			$_SESSION['user'] = $data;
-		} 
+            $s = $pdo->prepare("INSERT INTO users (name, lastname) VALUES (:prenom, :nom)");
+            $s->execute([
+                'prenom' => $_POST['prenom'],
+                'nom' => $_POST['nom']
+            ]);
+            $g = $pdo->prepare("SELECT idUser FROM users WHERE name=:prenom AND lastname=:nom");
+            $g->execute([
+                'prenom' => $_POST['prenom'],
+                'nom' => $_POST['nom']
+            ]);
+            $myID = $g->fetch();
+            $statement = $pdo->prepare("INSERT INTO account (email, password, idUser1) VALUES (:email, :password, :myID)");
+            $statement->execute([
+                'email' => strip_tags($_POST['email']),
+                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                'myID' => $myID
+            ]);
+            $_SESSION['user'] = [
+                'email' => strip_tags($_POST['email']),
+                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                'myID' => $myID
+            ];
+        }
 	} 
 	catch(PDOException $e){
 		echo 'Exception: '. $e->getMessage();
@@ -55,4 +61,4 @@ else {
 	//exit();
 }
 
-var_dump($_POST);
+//var_dump($_POST);

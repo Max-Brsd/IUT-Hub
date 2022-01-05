@@ -13,7 +13,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 		);
 
 		$user = $statement->fetch();
-		if(!empty($user) && $user["password"] === $_POST["password"]){
+        if(!empty($user) && password_verify($user["password"], $_POST["password"])){
+            echo 'test';
 			$_SESSION['password'] = $user['password'];
 			$_SESSION['email'] = $user['email'];
 
