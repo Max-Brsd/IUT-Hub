@@ -7,7 +7,6 @@
 	<ul id="menu">
 		<a href="<?= __DIR__ . '/../login.php' ?>"><li>Connection</li></a>
 		<a href="<?= __DIR__ . '/../register.php' ?>"><li>Inscription</li></a>
-		<a href="<?= __DIR__ .'/../chooseProfil.php' ?>"><li>Inscription</li></a>
 	</ul>
 	</div>
 
