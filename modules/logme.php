@@ -23,7 +23,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $_SESSION['idUser4'] = $user['idUser4'];
             $_SESSION['idUser5'] = $user['idUser5'];
 
-			$userInfo = array($_SESSION['user'], $_SESSION['password']);
+			$userInfo = array($_SESSION['email'], $_SESSION['password']);
 			setcookie('user', json_encode($userInfo), time() + 86400, '/');
 		}
 		else {
