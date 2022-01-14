@@ -1,6 +1,12 @@
 <?php
+<<<<<<< Updated upstream
     session_start();
 ?>
+=======
+session_start();
+?>
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +29,7 @@
         <img id="logoIUT" src="img/logo_iuthub2.png">
     </a>
 
-    <h2 id="titleWho">Ptdr t qui ?</h2>
+    <h2 id="titleWho">Qui est-ce ?</h2>
         <input type="checkbox" id="modifyButton" name="checkBox">
     <p id="modifyText">Modifier</p>
     <p id="finishButton">Terminer</p>
@@ -31,27 +37,27 @@
 
     <div class="container">
         <div class="LoïcPicture">
-            <a href="#"><img  id="loïcPP" src="img/loïc.svg"></a>
+            <a href="#"><?php $_SESSION['name']='Loïc'; ?><img  id="loïcPP" src="img/loïc.svg"></a>
             <p id="loïcPP-label">Loïc</p>
         </div>
 
         <div class="KurtPicture">
-            <a href="#"><img  id="kurtPP" src="img/kurt.svg"></a>
+            <a href="#"><?php $_SESSION['name']='Kurt'; ?><img  id="kurtPP" src="img/kurt.svg"></a>
             <p id="kurtPP-label">Kurt</p>
         </div>
 
         <div class="MateoPicture">
-            <a href="#"><img  id="mateoPP" src="img/mateo.svg"></a>
+            <a href="#"><?php $_SESSION['name']='Mateo'; ?><img  id="mateoPP" src="img/mateo.svg"></a>
             <p id="mateoPP-label">Mateo</p>
         </div>
 
         <div class="KevinPicture">
-            <a href="#"><img  id="kevinPP" src="img/kevin.svg"></a>
+            <a href="#"><?php $_SESSION['name']='Kevin'; ?><img  id="kevinPP" src="img/kevin.svg"></a>
             <p id="kevinPP-label">Kevin</p>
         </div>
 
         <div class="MaximePicture">
-            <a href="#"><img  id="maximePP" src="img/maxime.svg"></a>
+            <a href="#"><?php $_SESSION['name']='Maxime'; ?><img  id="maximePP" src="img/maxime.svg"></a>
             <p id="maximePP-label">Maxime</p>
         </div>
     </div>

@@ -13,10 +13,15 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 		);
 
 		$user = $statement->fetch();
-        if(!empty($user) && password_verify($_POST["password"], $user["password"])){
-
+		if(!empty($user) && $user["password"] === $_POST["password"]){
+			//$_SESSION['user'] = $user['name'];
 			$_SESSION['password'] = $user['password'];
 			$_SESSION['email'] = $user['email'];
+            $_SESSION['idUser1'] = $user['idUser1'];
+            $_SESSION['idUser2'] = $user['idUser2'];
+            $_SESSION['idUser3'] = $user['idUser3'];
+            $_SESSION['idUser4'] = $user['idUser4'];
+            $_SESSION['idUser5'] = $user['idUser5'];
 
 			$userInfo = array($_SESSION['user'], $_SESSION['password']);
 			setcookie('user', json_encode($userInfo), time() + 86400, '/');
@@ -31,7 +36,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 		die();
 	}
 }
-header('Location: /chooseProfil.php');
+header('Location: /../chooseProfil.php');
 exit();
 
 /*
